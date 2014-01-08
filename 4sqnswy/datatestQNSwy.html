@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js"></script>
+   <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+        </head>
+<body>    
+
+    <script>
+    
+
+var csv = 'http://cascadia.linepointpath.com/dev/4sqnswy/checkins_mini.csv';
+var venueid = [];
+var venue = dataStart;
+var dataStart = [];
+
+/* http://thecodingtutorials.blogspot.com/2012/08/using-multi-column-data-with-d3-part-1.html */
+
+d3.csv(csv, function(error, csv) {
+
+
+csv.forEach(function(x) {
+	dataStart= x["venueid"];
+	console.log(dataStart);
+	});
+  });
+/* 	console.log(dataStart); */
+
+
+/* Now break dataEnter into bits for the URL to pass to 4sq; */
+
+/* This is successfully getting the object */
+$.getJSON('https://api.foursquare.com/v2/venues/'+ venue + '?oauth_token=DKMQRQ5G33P5B1XQIHBJRPPVS2QXJ1NX4US0CWOEFEOJDLIK&v=20131013',
+          function(data) {
+          console.log(data); 
+                      $.each(data.response.venues, function(i,venues){
+                                      content = '<p>Name: ' + venues.name + 
+            ' Address: ' + venues.location.address + 
+            ' Lat/long: ' + venues.location.lat + ', ' + venue.location.lng + '</p>';
+                                                  $(data).appendTo("#names");
+                                                                                                           });
+});
+</script>
+<div id="names">
+
+  </div>
+</body>
+</html>
+
+
+

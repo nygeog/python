@@ -1,0 +1,8 @@
+https://api.foursquare.com/v2/venues/4ab427dff964a520227020e3?oauth_token=DKMQRQ5G33P5B1XQIHBJRPPVS2QXJ1NX4US0CWOEFEOJDLIK&v=20131021
+
+
+
+venues/40a55d80f964a52020f31ee3
+
+#from 4sauare
+https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=4T3JCORVUC2MHIWKQGDUVKHPK3XAIKFJSH1AZS4OBCQBH3QX&v=20131021
