@@ -1,0 +1,1 @@
+df.fillna(0)
