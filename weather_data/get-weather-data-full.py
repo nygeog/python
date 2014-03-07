@@ -4,14 +4,14 @@ import pandas as pd
 #### THIS SCRIPT IS TOTALLY RIPPED OFF (with some modifications) FROM NATHAN YAU's book VISUALIZE THIS. http://book.flowingdata.com/downloads.html
  
 # Create/open a file called wunder.txt (which will be a comma-delimited file)
-table  = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data.txt'
-outcsv = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data.csv'
+table  = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_2014.txt'
+outcsv = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_2014.csv'
 
 # f = open(table, 'w')
  
 # # Iterate through year, month, and day
-# for y in range(2009, 2010):
-#   for m in range(1, 13):
+# for y in range(2014, 2015):
+#   for m in range(1, 3):
 #     for d in range(1, 32):
  
 #       # Check if leap year
@@ -40,7 +40,15 @@ outcsv = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data.csv'
 #       # Get temperature from page
 #       soup = BeautifulSoup(page)
 #       # dayTemp = soup.body.nobr.b.string
-#       dayTemp = soup.findAll(attrs={"class":"nobr"})[5].span.string
+#       dayTemp = soup.findAll(attrs={"class":"nobr"})[2].span.string
+
+#       maxTemp = soup.findAll(attrs={"class":"nobr"})[4].span.string
+
+#       minTemp = soup.findAll(attrs={"class":"nobr"})[7].span.string
+
+#       precip = soup.findAll(attrs={"class":"nobr"})[11].span.string
+
+#       snow = soup.findAll(attrs={"class":"nobr"})[14].span.string 
  
 #       # Format month for timestamp
 #       if len(str(m)) < 2:
@@ -58,20 +66,25 @@ outcsv = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data.csv'
 #       timestamp = str(y) + mStamp + dStamp
  
 #       # Write timestamp and temperature to file
-#       f.write(timestamp + ',' + dayTemp + '\n')
+#       f.write(timestamp + ',' + dayTemp + ',' + maxTemp + ',' + minTemp + ',' + precip + ',' + snow + '\n')
 
-#       print 'added ' + timestamp + '-' + dayTemp
+#       print 'added ' + timestamp + '-' + dayTemp + '-' + maxTemp + '-' + minTemp + '-' + precip + '-' + snow
  
 # # Done getting data! Close file.
 # f.close()
 
+table  = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_2013.txt'
+outcsv = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_2013.csv'
+
 df = pd.read_csv(table)
 
-df.columns = ['date','tempmean']
+df.columns = ['date','tempmean','tempmax','tempmin','precip','snow']
 
 df['location'] = 'knyc-central park'
 
+df = df.replace('T', 0.001)
+
 df.to_csv(outcsv, index=False)
 
-
+#Replace T with 0.001. 
 
