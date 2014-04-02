@@ -4,9 +4,10 @@ imageList = ["test",
 "LoveCraft",
 "test3"]
 
+basewidth = 650
+
 for imageItem in imageList:
 
-	basewidth = 650
 	img = Image.open(imageItem+'.jpg')
 	width, height = img.size
 	print 'width is: ' + str(width) + ' and height is: ' + str(height)
@@ -18,7 +19,7 @@ for imageItem in imageList:
 	width, height = img.size
 	print 'width is: ' + str(width) + ' and height is: ' + str(height)
 
-	print 'done resizing image' + imageItem
+	print 'done resizing image ' + imageItem
 
 
 
