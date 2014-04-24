@@ -1,0 +1,3 @@
+
+
+sudo port install py27-pandas
