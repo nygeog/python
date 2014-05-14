@@ -1,0 +1,8 @@
+pandas/_sparse.so
+pandas/algos.so
+pandas/hashtable.so
+pandas/index.so
+pandas/json.so
+pandas/lib.so
+pandas/parser.so
+pandas/tslib.so
