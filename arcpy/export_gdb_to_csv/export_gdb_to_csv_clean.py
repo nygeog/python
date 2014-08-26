@@ -1,6 +1,6 @@
 wd = #<working directory>
-table   = pd+"/treedn.gdb/"+geo+"_trees_int_dis"
-outfile = pd+"/treedn/"+geo+"_trees.csv"      
+table   = wd+"/treedn.gdb/"+geo+"_trees_int_dis"
+outfile = wd+"/treedn/"+geo+"_trees.csv"      
 
 fields = arcpy.ListFields(table)
 field_names = [field.name for field in fields]
