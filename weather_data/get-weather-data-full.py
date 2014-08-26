@@ -3,10 +3,10 @@ from BeautifulSoup import BeautifulSoup
 import pandas as pd
 #### THIS SCRIPT IS TOTALLY MODIFIED (with some modifications) FROM NATHAN YAU's book VISUALIZE THIS. http://book.flowingdata.com/downloads.html
  
-Create/open a file called wunder.txt (which will be a comma-delimited file)
+#Create/open a file called wunder.txt (which will be a comma-delimited file)
  
-Iterate through year, month, and day
-for y in range(2010, 2014):
+#Iterate through year, month, and day
+for y in range(2014, 2015):
   table  = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_'+str(y)+'.txt'
   outcsv = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_'+str(y)+'.csv'
 
@@ -93,7 +93,7 @@ for y in range(2010, 2014):
 f.close()
 
 
-for y in range(2010, 2015):
+for y in range(2014, 2015):
   table  = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_'+str(y)+'.txt'
   outcsv = '/Users/danielmsheehan/GitHub/python/weather_data/nyc_weather_data_'+str(y)+'.csv'
 
