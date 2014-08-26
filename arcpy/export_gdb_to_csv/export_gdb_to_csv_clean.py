@@ -2,8 +2,8 @@ import arcpy
 import csv
 
 wd = #<working directory>
-table   = wd+"/treedn.gdb/"+geo+"_trees_int_dis"
-outfile = wd+"/treedn/"+geo+"_trees.csv"      
+table   = wd+"/treedn.gdb/trees"
+outfile = wd+"/treedn/trees.csv"      
 
 fields = arcpy.ListFields(table)
 field_names = [field.name for field in fields]
