@@ -1,3 +1,6 @@
+import arcpy
+import csv
+
 wd = #<working directory>
 table   = wd+"/treedn.gdb/"+geo+"_trees_int_dis"
 outfile = wd+"/treedn/"+geo+"_trees.csv"      
