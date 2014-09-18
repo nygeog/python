@@ -2,7 +2,7 @@
 ##Read a CSV file and save as Shapefile.
 ###You need Fiona, Pandas and Shapely
 
-[Check out my blogpost for more info] http://scriptogr.am/nygeog/post/csv-to-shapefile-conversion-with-pandas-fiona-and-shapely)
+[Check out my blogpost for more info](http://scriptogr.am/nygeog/post/csv-to-shapefile-conversion-with-pandas-fiona-and-shapely)
 
 	import pandas as pd
 	from shapely.geometry import Point, mapping
