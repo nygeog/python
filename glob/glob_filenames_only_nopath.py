@@ -1,0 +1,1 @@
+names = [os.path.basename(x) for x in glob.glob('/your_path')]
