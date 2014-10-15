@@ -1,9 +1,9 @@
 import arcpy
 import csv
 
-wd = #<working directory>
-table   = wd+"/treedn.gdb/trees"
-outfile = wd+"/treedn/trees.csv"      
+wd = "C://GIS/project/" #<working directory>
+table   = wd+"processing.gdb/table" #table or could be a feature class in a geodatabase
+outfile = wd+"output.csv" #output csv file in the project directory
 
 fields = arcpy.ListFields(table)
 field_names = [field.name for field in fields]
