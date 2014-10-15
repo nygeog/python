@@ -1,7 +1,7 @@
 import arcpy
 import csv
 
-wd = "C://GIS/project/" #<working directory>
+wd = "C:/GIS/project/" #<working directory>
 table   = wd+"processing.gdb/table" #table or could be a feature class in a geodatabase
 outfile = wd+"output.csv" #output csv file in the project directory
 
