@@ -1,0 +1,1 @@
+df['bar'] = df.bar.map(str) + " is " + df.foo.

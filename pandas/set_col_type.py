@@ -1,0 +1,1 @@
+df.a = df.a.astype(float)
