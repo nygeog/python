@@ -1,0 +1,10 @@
+PARSING OUT WORDS BETWEEN SPACE (e.g. house number and street address)
+
+HOUSE = Left ( [ADDRESS] , InStr ( [ADDRESS]," " ) )
+
+STREET = Right ( [ADDRESS], Len ( [ADDRESS] ) - InStr ( [ADDRESS], " " ) )
+
+
+PARSING OUT WORDS WITH “,” AS THE DELIMITER
+
+Split( [Match_addr],",")(0)

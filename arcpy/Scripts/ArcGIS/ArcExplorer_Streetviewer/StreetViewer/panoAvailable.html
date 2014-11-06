@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<title>ArcGIS Explorer StreetViewer Task</title>
+<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=TYPE_YOUR_GOOGLE_MAPS_API_KEY_HERE" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+
+var lat_param = gup( 'lat' );
+var long_param = gup( 'long' );
+var result = "null";
+
+
+   
+function initialize() {
+var queryloc = new GLatLng(lat_param,long_param);
+panoClient = new GStreetviewClient();      
+panoClient.getNearestPanoramaLatLng(queryloc, returnLatLong);
+return("initialized");
+};
+    
+
+function returnLatLong(inPoint){
+
+
+if (inPoint != null)
+	result = "True";
+else
+	result = "False";
+
+};
+
+function getResult(){
+	return (result.toString());
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+};
+
+</script>
+</head>
+
+<body onload="initialize();" onunload="GUnload();">
+<div name="pano" id="pano" style="width: 500px; height: 300px; background-color:red;"></div>
+hello
+</body>
+
+</html>

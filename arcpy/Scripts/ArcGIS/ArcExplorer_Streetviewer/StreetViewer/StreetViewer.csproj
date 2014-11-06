@@ -1,0 +1,111 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D18DC88-367B-4D1C-A1D5-69CC16A00F2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StreetViewer</RootNamespace>
+    <AssemblyName>StreetViewer</AssemblyName>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.E2API">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomTaskControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomTaskControl.Designer.cs">
+      <DependentUpon>CustomTaskControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTask.cs" />
+    <Compile Include="CustomTaskUI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StreetViewer.CustomTaskUI.nmf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomTaskControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomTaskControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\StreetViewer.png" />
+    <EmbeddedResource Include="Images\GetLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\getcoord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="panoAvailable.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+</Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>REM Find the location of the CopyToTasks tool.
+set SDK=%25ArcGIS_E2SDK%25
+set ToolPath="%25SDK%25\Tools\CopyToTasks.exe"
+
+REM Run the CopyToTasks tool to copy the dll and nmf to the location from which ArcGIS Explorer will load it.
+REM The tool creates a log file in the current project directory.
+%25ToolPath%25 "$(TargetPath)" "-n:$(ProjectDir)StreetViewer.CustomTaskUI.nmf" &gt;"$(ProjectDir)CopyToTasksReport.log"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

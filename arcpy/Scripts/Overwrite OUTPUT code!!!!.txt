@@ -1,0 +1,8 @@
+import arcpy
+from arcpy import env
+env.overwriteOutput = True
+
+
+
+# keep window open to let know when finished
+raw_input("processing has been completed effectively, congrats! - press any key to exit")

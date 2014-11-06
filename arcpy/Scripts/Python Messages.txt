@@ -1,0 +1,39 @@
+quinn.james: 
+gina didn't tell us that!
+rude
+jk
+
+Daniel: 
+yeah, maybe it'd almost be worth as in-pay but with a bonus week off or something
+
+Sent at 2:21 PM on Wednesday
+
+quinn.james: 
+http://onpoint.wbur.org/2011/09/28/amazing-maps?autostart=true
+
+
+Sent at 10:47 AM on Thursday
+Daniel: 
+sounds like monmier
+
+Sent at 12:03 PM on Thursday
+
+quinn.james: 
+arcpy.AddMessage ("")
+arcpy.AddMessage ("Processing " + str(shapecount) + " features ...")
+arcpy.AddMessage ("")
+#Count number of features
+shapecount = arcpy.GetCount_management(inCur)
+
+arcpy.AddMessage ("")
+arcpy.AddMessage ("Processing " + str(shapecount) + " features ...")
+arcpy.AddMessage ("")
+
+run = 0
+
+# Loop through the features and process each shape using field selected by user
+while f_row:
+run = run + 1
+arcpy.AddMessage (" Processing feature " + str(run) + " of " + str(shapecount))
+zonename = f_row.getValue(field)
+Expression = "\"" + field + "\" = " + str(zonename)

@@ -1,0 +1,11 @@
+C:\e2Tasks\StreetViewer\StreetViewer\bin\Debug\StreetViewer.dll
+C:\e2Tasks\StreetViewer\StreetViewer\bin\Debug\StreetViewer.pdb
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\ResolveAssemblyReference.cache
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.Images.StreetViewer.png
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.Images.GetLocation.png
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.Images.getcoord.png
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.Properties.Resources.resources
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.CustomTaskControl.resources
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.csproj.GenerateResource.Cache
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.dll
+C:\e2Tasks\StreetViewer\StreetViewer\obj\Debug\StreetViewer.pdb

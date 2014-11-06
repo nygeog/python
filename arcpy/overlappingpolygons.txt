@@ -1,0 +1,11 @@
+source
+
+Intersect, 1 input, itself. 
+
+dissolve that. 
+
+erase source with disslve as the erase feature
+
+split the intersect by features
+
+run on the erase fc and also all the split features.

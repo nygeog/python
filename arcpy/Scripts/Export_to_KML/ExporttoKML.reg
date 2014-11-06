@@ -1,0 +1,30 @@
+REGEDIT4
+
+; This Registry Script enters CoClasses Into their appropriate Component Category
+; Use this script during installation of the components
+; 
+; It also lists all coclasses contained within the DLL
+
+
+; CoClass: prjExporttoKML.clsCustomGXFilter
+; CLSID: {8F43CC18-6687-4BF8-94AE-97E88778FD45}
+; Component Category: ESRI GX Object Filters
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{8F43CC18-6687-4BF8-94AE-97E88778FD45}\Implemented Categories\{BB8F3045-1D26-11D3-9F55-00C04F6BC69E}]
+
+; CoClass: prjExporttoKML.clsExporttoKML
+; CLSID: {3F75DA74-F3CE-4698-AAB2-F7A0CB2F3C35}
+; Component Category: ESRI Mx Commands
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{3F75DA74-F3CE-4698-AAB2-F7A0CB2F3C35}\Implemented Categories\{B56A7C42-83D4-11D2-A2E9-080009B6F22B}]
+
+; CoClass: prjExporttoKML.clsExporttoKMLExtension
+; CLSID: {B34BC1A2-8377-4A87-BF2E-CE4E0A30AFAD}
+; Component Category: ESRI Mx Extensions
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{B34BC1A2-8377-4A87-BF2E-CE4E0A30AFAD}\Implemented Categories\{B56A7C45-83D4-11D2-A2E9-080009B6F22B}]
+
+; CoClass: prjExporttoKML.clsExportToKMLToolbar
+; CLSID: {DC16A571-57A8-42F6-81DF-1FC0F1F27ADC}
+; Component Category: ESRI Mx CommandBars
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{DC16A571-57A8-42F6-81DF-1FC0F1F27ADC}\Implemented Categories\{B56A7C4A-83D4-11D2-A2E9-080009B6F22B}]
+; Premier Toolbar for ArcMap
+[HKEY_CURRENT_USER\Software\ESRI\ArcMap\Settings\PremierToolbars\{DC16A571-57A8-42F6-81DF-1FC0F1F27ADC}]
+

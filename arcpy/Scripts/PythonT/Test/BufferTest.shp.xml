@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>New York City Department of City Planning</origin>
+				<pubdate>January, 2010</pubdate>
+				<title>New York City Municipal Court Districts</title>
+				<edition>09C</edition>
+				<geoform Sync="TRUE">vector digital data</geoform>
+				<serinfo>
+					<sername>BYTES of the BIG APPLE</sername>
+					<issue>09C</issue>
+				</serinfo>
+				<ftname Sync="FALSE">nymc</ftname>
+				<pubinfo>
+					<publish>New York City Department of City Planning</publish>
+				</pubinfo>
+				<onlink Sync="FALSE">http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml</onlink>
+				<othercit>No major changes since previous version.</othercit>
+			</citeinfo>
+		</citation>
+		<descript>
+			<abstract>The New York City Municipal Court boundaries.</abstract>
+			<purpose>These districts were created by the Department of City Planning to aid city agencies in administering public services.</purpose>
+			<langdata Sync="TRUE">en</langdata>
+		</descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>December, 2009</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>ground condition</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>Quarterly</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc Sync="TRUE">-74.257465</westbc>
+				<eastbc Sync="TRUE">-73.699450</eastbc>
+				<northbc Sync="TRUE">40.915808</northbc>
+				<southbc Sync="TRUE">40.495805</southbc>
+			</bounding>
+			<lboundng>
+				<leftbc Sync="TRUE">913090.770096</leftbc>
+				<rightbc Sync="TRUE">1067317.219904</rightbc>
+				<bottombc Sync="TRUE">120053.526313</bottombc>
+				<topbc Sync="TRUE">272932.050103</topbc>
+			</lboundng>
+		</spdom>
+		<keywords>
+			<place>
+				<placekey>New York</placekey>
+				<placekey>New York City</placekey>
+				<placekey>Manhattan</placekey>
+				<placekey>Staten Island</placekey>
+				<placekey>Brooklyn</placekey>
+				<placekey>Bronx</placekey>
+				<placekey>Queens</placekey>
+			</place>
+			<theme>
+				<themekey>Court</themekey>
+				<themekey>Municipal</themekey>
+				<themekey>Law</themekey>
+				<themekey>boundaries</themekey></theme>
+		</keywords>
+		<accconst>The data are freely available to all New York City agencies and the public.</accconst>
+		<useconst>While all possible measures have been taken to ensure the accuracy of this data, the NYC Department of City Planning and the City of New York assume no responsibility for the accuracy of this data.  All users should independently verify the accuracy of the data for their purposes.</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntpos>BYTES of the BIG APPLE Coordinator</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>22 Reade St, 5N</address>
+					<city>New York</city>
+					<state>NY</state>
+					<postal>10007</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>212.720.3505</cntvoice>
+				<cntorgp><cntorg>NYC Department of City Planning</cntorg></cntorgp></cntinfo>
+		</ptcontac>
+		<native Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.1.1850</native>
+		<natvform>ESRI Shapefile</natvform>
+	</idinfo>
+	<dataqual>
+		<posacc>
+			<horizpa>
+				<horizpar>The District files are created from the Department of City Planning LION file of the same release.  The LION file is spatially aligned with NYCMap aerial photography.</horizpar>
+			</horizpa>
+		</posacc>
+		<attracc>
+		</attracc>
+		<lineage><procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">M:\GIS\ArcGIS_Team_Files\Metadata\Districts\nymc.shp.xml</srcused><procdate Sync="TRUE">20100201</procdate><proctime Sync="TRUE">12554300</proctime></procstep></lineage></dataqual>
+	<spdoinfo>
+		<direct Sync="TRUE">Vector</direct>
+		<ptvctinf>
+			<sdtsterm Name="BufferTest">
+				<sdtstype Sync="TRUE">G-polygon</sdtstype>
+				<ptvctcnt Sync="TRUE">0</ptvctcnt>
+			</sdtsterm>
+			<esriterm Name="BufferTest">
+				<efeatyp Sync="TRUE">Simple</efeatyp>
+				<efeageom Sync="TRUE">Polygon</efeageom>
+				<esritopo Sync="TRUE">FALSE</esritopo>
+				<efeacnt Sync="TRUE">0</efeacnt>
+				<spindex Sync="TRUE">FALSE</spindex>
+				<linrefer Sync="TRUE">FALSE</linrefer>
+			</esriterm>
+		</ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<planci>
+					<plance Sync="TRUE">coordinate pair</plance>
+					<coordrep>
+						<absres Sync="TRUE">0.000000</absres>
+						<ordres Sync="TRUE">0.000000</ordres>
+					</coordrep>
+					<plandu Sync="TRUE">survey feet</plandu>
+				</planci>
+				<mapproj><mapprojn Sync="TRUE">Lambert Conformal Conic</mapprojn><lambertc><stdparll Sync="TRUE">40.666667</stdparll><stdparll Sync="TRUE">41.033333</stdparll><longcm Sync="TRUE">-74.000000</longcm><latprjo Sync="TRUE">40.166667</latprjo><feast Sync="TRUE">984250.000000</feast><fnorth Sync="TRUE">0.000000</fnorth></lambertc></mapproj></planar>
+			<geodetic>
+				<horizdn Sync="TRUE">North American Datum of 1983</horizdn>
+				<ellips Sync="TRUE">Geodetic Reference System 80</ellips>
+				<semiaxis Sync="TRUE">6378137.000000</semiaxis>
+				<denflat Sync="TRUE">298.257222</denflat>
+			</geodetic>
+			<cordsysn>
+				<geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn>
+				<projcsn Sync="TRUE">NAD_1983_StatePlane_New_York_Long_Island_FIPS_3104_Feet</projcsn>
+			</cordsysn>
+		</horizsys>
+	</spref>
+	<eainfo><detailed Name="BufferTest">
+			<enttyp>
+				<enttypl>nymc</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt>
+				<enttypc Sync="TRUE">0</enttypc>
+			</enttyp>
+			<attr><attrlabl Sync="TRUE">FID</attrlabl><attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs Sync="TRUE">ESRI</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr><attrlabl Sync="TRUE">Shape</attrlabl>
+				<attalias Sync="TRUE">Shape</attalias>
+				<attrtype Sync="TRUE">Geometry</attrtype>
+				<attwidth Sync="TRUE">0</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="TRUE">Feature geometry.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv><udom Sync="TRUE">Coordinates defining the features.</udom></attrdomv>
+			</attr>
+			<attr><attrlabl Sync="TRUE">Id</attrlabl><attalias Sync="TRUE">Id</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">6</attwidth></attr></detailed></eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>New York City Department of City Planning</cntorg>
+				</cntorgp>
+				<cntinst>
+Available at the following website:
+http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml
+</cntinst>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>22 Reade St.</address>
+					<city>New York</city>
+					<state>New York</state>
+					<postal>10007</postal>
+					<country>USA</country>
+				</cntaddr>
+			</cntinfo>
+		</distrib>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<transize>0.437</transize>
+					<dssize Sync="TRUE">0.000</dssize>
+				</digtinfo>
+			</digform>
+			<fees>Free</fees>
+		</stdorder>
+		<resdesc Sync="FALSE">Downloadable Data</resdesc>
+	</distinfo>
+	<metainfo>
+		<metd Sync="TRUE">20100320</metd>
+		<metc>
+			<cntinfo>
+				<cntperp>
+					<cntorg>NYC Department of City Planning</cntorg>
+				</cntperp>
+				<cntpos>BYTES of the BIG APPLE Coordinator</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>22 Reade St, 5N</address>
+					<city>New York</city>
+					<state>New York</state>
+					<postal>10007</postal>
+				</cntaddr>
+				<cntvoice>212.720.3505</cntvoice>
+			</cntinfo>
+		</metc>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<mettc Sync="TRUE">local time</mettc>
+		<langmeta Sync="TRUE">en</langmeta>
+		<metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<Esri>
+		<CreaDate>20100201</CreaDate>
+		<CreaTime>12554300</CreaTime>
+		<SyncOnce>FALSE</SyncOnce>
+		<SyncDate>20100320</SyncDate>
+		<SyncTime>12434900</SyncTime>
+		<ModDate>20100320</ModDate>
+		<ModTime>12434900</ModTime>
+		<PublishStatus>Published</PublishStatus><MetaID>{B6CB1A56-D4B7-4966-A8D9-43391FC8D9FD}</MetaID><DataProperties><lineage><Process ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Analysis Tools.tbx\Select" Date="20100201" Time="125547">Select C:\Temp\DCP_Convert\DCP_SR.gdb\temp C:\TEMP\09C\Districts\shp\nymc__Iteration.shp "ObjectID&gt;=0 AND ObjectID&lt;3000"</Process><Process ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Analysis Tools.tbx\Select" Date="20100201" Time="125547">Select C:\TEMP\09C\Districts\shp\nymc__Iteration.shp C:\TEMP\09C\Districts\shp\nymc.shp #</Process><Process ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Analysis Tools.tbx\Buffer" Date="20100320" Time="124350">Buffer D:\GIS\Data\Municipal\NY\New_York_City\Community_Districts\nymc_09c_av\nymc.shp D:\GIS\Scripts\Python\Test\BufferTest.shp "500 Feet" FULL ROUND ALL #</Process></lineage></DataProperties></Esri>
+	<mdDateSt Sync="TRUE">20100320</mdDateSt>
+	<dataIdInfo>
+		<envirDesc Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.1.1850</envirDesc>
+		<dataLang>
+			<languageCode Sync="TRUE" value="en"></languageCode>
+		</dataLang>
+		<idCitation>
+			<resTitle Sync="TRUE">BufferTest</resTitle>
+			<presForm>
+				<PresFormCd Sync="TRUE" value="005"></PresFormCd>
+			</presForm>
+		</idCitation>
+		<spatRpType>
+			<SpatRepTypCd Sync="TRUE" value="001"></SpatRepTypCd>
+		</spatRpType>
+		<dataExt>
+			<geoEle>
+				<GeoBndBox esriExtentType="native">
+					<westBL Sync="TRUE">913090.770096</westBL>
+					<eastBL Sync="TRUE">1067317.219904</eastBL>
+					<northBL Sync="TRUE">272932.050103</northBL>
+					<southBL Sync="TRUE">120053.526313</southBL>
+					<exTypeCode Sync="TRUE">1</exTypeCode>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<geoBox esriExtentType="decdegrees">
+			<westBL Sync="TRUE">-74.257465</westBL>
+			<eastBL Sync="TRUE">-73.69945</eastBL>
+			<northBL Sync="TRUE">40.915808</northBL>
+			<southBL Sync="TRUE">40.495805</southBL>
+			<exTypeCode Sync="TRUE">1</exTypeCode>
+		</geoBox>
+	</dataIdInfo>
+	<mdLang>
+		<languageCode Sync="TRUE" value="en"></languageCode>
+	</mdLang>
+	<mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName>
+	<mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer>
+	<mdChar>
+		<CharSetCd Sync="TRUE" value="004"></CharSetCd>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd Sync="TRUE" value="005"></ScopeCd>
+	</mdHrLv>
+	<mdHrLvName Sync="TRUE">dataset</mdHrLvName>
+	<distInfo>
+		<distributor>
+			<distorTran>
+				<onLineSrc>
+					<orDesc Sync="TRUE">002</orDesc>
+					<linkage Sync="TRUE">file://\\RUNDLE-006\D$\GIS\Scripts\Python\Test\BufferTest.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc>
+				<transSize Sync="TRUE">0.000</transSize>
+			</distorTran>
+			<distorFormat>
+				<formatName Sync="TRUE">Shapefile</formatName>
+			</distorFormat>
+		</distributor>
+	</distInfo>
+	<refSysInfo>
+		<RefSystem>
+			<refSysID>
+				<identCode Sync="TRUE">NAD_1983_StatePlane_New_York_Long_Island_FIPS_3104_Feet</identCode>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<spatRepInfo>
+		<VectSpatRep>
+			<topLvl>
+				<TopoLevCd Sync="TRUE" value="001"></TopoLevCd>
+			</topLvl>
+			<geometObjs Name="BufferTest"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="001"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">0</geoObjCnt></geometObjs></VectSpatRep>
+	</spatRepInfo>
+	<mdFileID Sync="TRUE">{ED62AE0B-49ED-4E07-8880-44862DB19B56}</mdFileID>
+</metadata>

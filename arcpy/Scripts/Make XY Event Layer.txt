@@ -1,0 +1,24 @@
+import arcpy
+arcpy.env.workspace = "C:/data"
+arcpy.MakeXYEventLayer_management("firestations.dbf", "POINT_X", "POINT_Y", "firestations_points","", "POINT_Z")
+
+
+MakeXYEventLayer_management(table, in_x_field, in_y_field, out_layer, {spatial_reference}, {in_z_field})
+ Creates a new point feature layer based on X and Y coordinates defined in a
+source table. If the source table contains Z coordinates (e.g., elevation values), that field can also be specified in the creation of the event layer. The layer created by this tool is temporary.
+
+     INPUTS:
+      table (Table View):
+  The table containing the X and Y coordinates that define the locations of the point features in the output event layer.
+      in_x_field (Field):
+  The field in the input table that contains the X coordinates.
+      in_y_field (Field):
+  The field in the input table that contains the Y coordinates.
+      spatial_reference {Spatial Reference}:
+  The spatial reference of the coordinates in the X and Y Fields defined above. This will be the output event layer's spatial reference.
+      in_z_field {Field}:
+  The field in the input table that contains the Z coordinates.
+
+     OUTPUTS:
+      out_layer (Feature Layer):
+  The name of the output point event layer.

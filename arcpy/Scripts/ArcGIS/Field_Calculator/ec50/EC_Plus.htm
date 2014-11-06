@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<meta name="keywords"
+content="Ianko ,ESRI, GIS software, GIS, ArcView GIS,Free ArcView Extensions, ArcGIS, ArcMap, Surface, TIN, Thiessen
+ProfileExtractor, EditTools">
+<meta name="description"
+content="Free ArcView extensions, ET GeoWizards for ArcGIS, EditTools - all the tools you need to edit in ArcView,
+links to GIS resources.">
+<title>EasyCalculatePlus</title>
+</head>
+
+<body bgcolor="#FFFFE6" topmargin="5" leftmargin="20">
+
+<table border="0" width="630" cellpadding="0">
+  <tr>
+    <td width="624" align="center" bgcolor="#E9DCD6"><a href="http://www.ian-ko.com"
+    target="_top"><strong><small>EasyCalculate Home</small></strong></a></td>
+  </tr>
+</table>
+
+<table border="0" width="630" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><p align="left"><font size="5"><strong><br>
+    EasyCalculate Plus</strong></font></p>
+    <span class="content"><p><strong>EasyCalculate Plus shows how the expressions of
+    EasyCalculate can be used programmatically in your VB or VBA code.&nbsp; </strong></span></p>
+    <p><span class="content"><strong>EC Plus consists of two VB modules (included in the
+    download)</strong></span><ol>
+      <li><span class="content"><strong>EC_RunCalculator.bas - </strong>Has a single SUB procedure
+        - &quot;EC_Run_Calc&quot;, that illustrates how to use the FieldCalculator
+        programmatically. The procedure works on the selected layer in the ArcMap TOC. The only
+        changes the user needs to do are:</span><ul>
+          <li><span class="content">Change the&nbsp; name of the field to be calculated (the field
+            must be of the appropriate type for the calculations performed)</span></li>
+          <li><span class="content">Change the name of the Calculation procedure to be called (see the
+            procedures available in EC_Expressions.bas and How to add a new procedure)</span></li>
+          <li><span class="content">Some of the procedures might require additional parameters to be
+            passed.</span></li>
+        </ul>
+      </li>
+      <li><span class="content"><strong>EC_Expressions.bas -</strong> Contains several sample
+        calculation procedures. Any of the expressions available in EasyCalculate can be easily
+        added as a Sub procedure to the EC_Expressions module - see How to add a new procedure</span></li>
+    </ol>
+    <p><strong><span class="content">How to run EC Plus:</span></strong><ol>
+      <li><span class="content">In ArcMap: Go to Tools ==&gt; Macros ==&gt; Visual Basic Editor</span></li>
+      <li><span class="content">In the Visual Basic Editor: Right click on Project ==&gt; Import
+        file ==&gt; Navigate to the location of the EC Plus ==&gt; Select one of the *.bas file
+        ==&gt; Click the Open button</span></li>
+      <li><span class="content">Do the same to load the second file</span></li>
+      <li><span class="content">Make sure that in ArcMap the correct layer is selected</span></li>
+      <li><span class="content">Open the EC_Run_Calc module ==&gt; Make the changes required (see
+        above) and run the procedure</span></li>
+    </ol>
+    <p><span class="content"><strong>Procedures available in EC Plus - </strong>see<a
+    href="EasyCalculate.htm"> EasyCalculate</a> page for description</span><ul>
+      <li>polygon_Return_Area(sPreExpression As String, sExpression As String)</li>
+      <li>shape_Return_Length(sPreExpression As String, sExpression As String)</li>
+      <li>polyline_Get_X_MiddlePoint(sPreExpression As String, sExpression As String, _<br>
+        dDistance As Double, bAsRatio As Boolean)</li>
+      <li>mp_get_X_Center(sPreExpression As String, sExpression As String)</li>
+      <li>polyline_Flip(sPreExpression As String, sExpression As String)</li>
+      <li>polygon_Get_X_Center(sPreExpression As String, sExpression As String)</li>
+      <li>point_Get_X(sPreExpression As String, sExpression As String)</li>
+      <li>point_Get_M(sPreExpression As String, sExpression As String)</li>
+    </ul>
+    <p><strong><span class="content">How to add a new procedure:</span></strong><ol>
+      <li><span class="content">Open EC_Expressions module.</span></li>
+      <li><span class="content">Create a new Sub. Make sure that the name of the procedure is
+        unique for the module</span><p><font color="#004040"><em>Public Sub
+        point_Get_Y(sPreExpression As String, sExpression As String)</em></font></p>
+        <p><font color="#004040"><em>End Sub</em></font></p>
+      </li>
+      <li><span class="content">Go to ArcMap ==&gt; Open an attribute table ==&gt; Right click on
+        a field ==&gt; Calculate Values ==&gt; In the Field Calculator dialog click Load ==&gt;
+        Select an expression from the EasyCalculate ==&gt; Copy the code from the Pre-Logic box.
+        ==&gt; Close the field calculator using the Cancel button</span></li>
+      <li>Go to VB Editor ==&gt;&nbsp; paste the code in the procedure created in step 2 above<p><em><font
+        color="#004040">Public Sub point_Get_Y(sPreExpression As String, sExpression As String)<br>
+        &nbsp; Dim pMxDoc As IMxDocument<br>
+        &nbsp; Dim pMap As IMap<br>
+        &nbsp; Dim pPoint As IPoint<br>
+        &nbsp; Dim dY As Double<br>
+        &nbsp; Set pMxDoc = ThisDocument<br>
+        &nbsp; Set pMap = pMxDoc.FocusMap<br>
+        &nbsp; If (Not IsNull([Shape])) Then<br>
+        &nbsp;&nbsp;&nbsp; Set pPoint = [Shape]<br>
+        &nbsp;&nbsp;&nbsp; pPoint.Project pMap.SpatialReference<br>
+        &nbsp;&nbsp;&nbsp; dY = pPoint.Y<br>
+        &nbsp; End If<br>
+        End Sub</font></em></p>
+      </li>
+      <li><span class="content">Edit the code as bellow:</span><p><font color="#004040"><em>Public
+        Sub point_Get_Y(sPreExpression As String, sExpression As String)<br>
+        &nbsp; sPreExpression = _<br>
+        &nbsp; &quot;Dim pMxDoc As IMxDocument&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;Dim pMap As IMap&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;Dim pPoint As IPoint&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;Dim dY As Double&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;Set pMxDoc = ThisDocument&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;Set pMap = pMxDoc.FocusMap&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;If (Not IsNull([Shape])) Then&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;&nbsp; Set pPoint = [Shape]&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;&nbsp; pPoint.Project pMap.SpatialReference&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;&nbsp; dY = pPoint.Y&quot; &amp; vbNewLine &amp; _<br>
+        &nbsp; &quot;End If&quot;<br>
+        &nbsp; sExpression = &quot;dY&quot;<br>
+        End Sub</em></font></p>
+      </li>
+      <li><span class="content">The new procedure is ready to be run</span></li>
+    </ol>
+    <blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><font color="#C0C0C0"><small>For any comments and enquiries contact: <a
+href="mailto:ianko@yebo.co.za">webmaster@ian-ko.com</a></small><br>
+<small><small>All ESRI products mentioned are trademarks of Environmental Systems Research
+Institute, Inc.</small></small><br>
+<small><small>Copyright: Ianko Tchoukanski</small></small></font></p>
+</body>
+</html>

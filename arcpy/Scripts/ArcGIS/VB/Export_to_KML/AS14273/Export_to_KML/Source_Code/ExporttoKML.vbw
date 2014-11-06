@@ -1,0 +1,10 @@
+clsExporttoKML = 22, 22, 555, 498, C
+ErrorHandling = 66, 66, 599, 542, C
+basPublicProcedures = 88, 88, 621, 564, C
+frmBitmaps = 132, 132, 665, 608, C, 110, 110, 643, 586, C
+frmExporttoKML = 132, 132, 665, 580, C, 13, 9, 546, 485, C
+clsCustomGXFilter = 154, 154, 687, 602, C
+clsExportToKMLToolbar = 198, 198, 730, 646, C
+clsExporttoKMLExtension = 22, 22, 555, 470, C
+frmExporttoKMLOptions = 88, 88, 617, 564, C, 66, 66, 864, 766, C
+frmExporttoKMLGCSTrans = 0, 0, 0, 0, C, 88, 88, 786, 704, C

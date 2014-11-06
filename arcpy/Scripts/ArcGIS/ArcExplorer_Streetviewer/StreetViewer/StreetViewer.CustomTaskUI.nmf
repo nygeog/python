@@ -1,0 +1,26 @@
+﻿<esri:ArcExplorerDocument xmlns:esri='http://www.esri.com/schemas/ArcGIS/9.2' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+	<E2TaskUIDescriptions xsi:type='esri:ArrayOfE2TaskUIDescription'>
+		<E2TaskUIDescription xsi:type='esri:E2CustomTaskUI'>
+			<!-- Assembly is the the full strong name of the assembly. 
+			  1. Name of the file without the file extention
+			  2. Culture, e.g. en-US, en-GB, fr-CH, neutral (not specified)
+			  3. Public key token - e.g. ESRI public key token is 8fc3cc631e44ad86
+			  4. Version, e.g. 1.0.0.0. This parameter is used by Explorer to determine if an attempt should be 
+			     made to download a newer version of the task file than may exist on the machine -->
+			<Assembly>StreetViewer, Culture=neutral, PublicKeyToken=null, Version=1.0.500.0</Assembly>
+			<!-- Class should be the fully qualified name of the TaskUI class implemented in the Assembly above. 
+			     e.g. MyNamespace.MyCustomTaskUI -->
+			<Class>StreetViewer.CustomTaskUI</Class>
+			<!-- DisplayName should be the human readable name of the task to display in the Manage Tasks dialog.
+			     This should be distinguishable from other tasks.-->
+			<DisplayName>StreetViewer</DisplayName>
+			<!-- DownloadLocation should point to the accessible location on a server where the current version 
+			     of the task assembly can be downloaded. Location should include the file extension.
+			     Ftp, Http and UNC paths are supported, e.g.:
+			     http://www.mycompany.com/virtualdirectory/MyCustomTask.dll 
+			     ftp://ftp.mycompany.com/myfolder/MyCustomTask.dll 
+			     file://MachineName\ShareName\MyCustomTask.dll -->
+			<DownloadLocation>ENTER YOUR DOWNLOAD LOCATION HERE/StreetViewer.dll</DownloadLocation>
+		</E2TaskUIDescription>
+	</E2TaskUIDescriptions>
+</esri:ArcExplorerDocument>

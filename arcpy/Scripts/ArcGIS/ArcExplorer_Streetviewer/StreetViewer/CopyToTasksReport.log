@@ -1,0 +1,36 @@
+ESRI ArcGIS Explorer (R) SDK CopyToTasks Utility
+Copyright (c) ESRI, Inc.  All rights reserved.
+
+...checking arguments...
+
+Task Assembly File:
+C:\e2tasks\StreetViewer\StreetViewer\bin\Debug\StreetViewer.dll
+
+NMF file(s) specified:
+C:\e2tasks\StreetViewer\StreetViewer\StreetViewer.CustomTaskUI.nmf
+
+No cultures specified.
+
+...calculating task subfolder name...
+
+Task subfolder name for that task assembly:
+StreetViewer_neutral_null_1.0.500.0
+
+...checking task subfolder...
+
+Task subfolder already exists,
+
+...copying files...
+
+Copied file to:
+C:\Users\michael\AppData\Roaming\ESRI\ArcGIS Explorer\Tasks\StreetViewer_neutral_null_1.0.500.0\StreetViewer.dll
+
+Copied file to:
+C:\Users\michael\AppData\Roaming\ESRI\ArcGIS Explorer\Tasks\StreetViewer_neutral_null_1.0.500.0\StreetViewer.CustomTaskUI.nmf
+
+...no culture resources...
+
+
+*****************************************************
+Success
+*****************************************************

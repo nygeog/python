@@ -1,0 +1,1099 @@
+<html>
+
+<head>
+<meta name="keywords"
+content="Ianko ,ESRI, GIS software, GIS, ArcView GIS,Free ArcView Extensions, ArcGIS, ArcMap, Surface, TIN, Thiessen
+ProfileExtractor, EditTools">
+<meta name="description"
+content="Free ArcView extensions, ET GeoWizards for ArcGIS, EditTools - all the tools you need to edit in ArcView,
+links to GIS resources.">
+<title>Free ArcGIS Tools</title>
+</head>
+
+<body bgcolor="#FFFFE6" topmargin="5" leftmargin="20">
+
+<table border="0" width="630" cellpadding="0" bgcolor="#D2D1AB">
+  <tr>
+    <td width="100%" align="center"><a href="http://www.ian-ko.com"
+    target="_top"><strong><small>EasyCalculate home</small></strong></a></td>
+  </tr>
+</table>
+
+<table border="0" width="630" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>&nbsp;<table border="0" width="630" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><p align="center"><font size="5"><strong>Easy Calculate 5.0</strong></font></p>
+        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="17%" align="center"><a href="#New"><b>What's New</b></a></td>
+            <td width="17%" align="center"><b><a href="#Calculate">Calculate</a></b></td>
+            <td width="15%" align="center"><b><a href="#Edit">Edit</a></b></td>
+            <td width="17%" align="center"><b><a href="#Field">Field</a></b></td>
+            <td width="16%" align="center"><b><a href="#Draw">Draw</a></b></td>
+            <td width="18%" align="center"><b><a href="#Examples">Examples</a></b></td>
+          </tr>
+        </table>
+        <p>&nbsp;<span class="content"><strong>EasyCalculate is a set of expressions (currently
+        110) for the ArcGIS field calculator. The expressions can be loaded in the Field Calculator
+        and when executed calculate some spatial characteristics of the features, edit the shapes,
+        add records to a target layer, draw graphics etc.</strong></span></p>
+        <p><span class="content"><strong>How to use:</strong></span> <ol>
+          <li><span class="content">Unzip the file in a directory</span></li>
+          <li><span class="content">Right click on a field of a table ==&gt; Calculate Values</span></li>
+          <li><span class="content">In the Field Calculator dialog: click the Load button and select
+            the appropriate CAL file<br>
+            <font color="#FF0000">Some of the expressions require small changes in the code
+            (adjustment of tolerances or field names). Places that require changes are clearly
+            indicated in the code. The expressions that need&nbsp; </font></span><table border="0"
+            width="557" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="213" nowrap><span class="content"><font color="#FF0000">some adjustment are
+                indicated with</font></span></td>
+                <td width="8"></td>
+                <td width="27" bgcolor="#9DFF9D"></td>
+                <td width="7"></td>
+                <td width="302" nowrap>&nbsp; <font color="#FF0000">in the Notes column of the table
+                bellow</font></td>
+              </tr>
+            </table>
+          </li>
+          <li><span class="content">Make the changes in the code ( if needed).</span></li>
+          <li><span class="content">Click OK to execute.</span></li>
+        </ol>
+        <p><strong><span class="content">How to use the expressions programmatically: </span></strong></p>
+        <blockquote>
+          <p><span class="content">See <a href="EC_Plus.htm">EasyCalculate Plus</a></span></p>
+        </blockquote>
+          <p><a name="New"><span class="content"><strong>New in EasyCalculate
+          5.0</strong></span></a></p>
+        <table border="0" width="602" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="22">1.</td>
+            <td width="600" colspan="5">15 new expressions added - 29 July 2004</td>
+          </tr>
+          <tr>
+            <td width="22">2.</td>
+            <td width="600" colspan="5">All expressions are compatible with
+              ArcGIS 9.x. In order to accommodate ArcGIS 8.x &amp; 9.x some of
+              the expressions have versions. The version of the expressions are
+              indicated in the name. If the name ends with &quot;9x&quot; it
+              will run only in ArcGIS 9.0 and above. If the name ends with &quot;8x&quot; it
+              will run only in ArcGIS 8.x. If the name does not have
+              &quot;9x&quot; or &quot;8x&quot; suffix, the expression will run
+              on ArcGIS 8.x &amp; 9.x</td>
+          </tr>
+          <tr>
+            <td width="22">3.</td>
+            <td width="600" colspan="5">Some typo errors fixed.</td>
+          </tr>
+          <tr>
+            <td width="22"></td>
+            <td width="266"><span class="content">The new expressions&nbsp; are indicated with</span></td>
+            <td width="1"><span class="content"></span></td>
+            <td width="27" bgcolor="#FF8080"><span class="content"></span></td>
+            <td width="2"><span class="content"></span></td>
+            <td width="318"><span class="content">in the Applies To column of the table bellow</span></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    <p><strong><span class="content">Description of EasyCalculate functions</span></strong></p>
+    <table border="1" width="630">
+      <tr>
+        <td width="85">Pl = Polyline</td>
+        <td width="82">Pg = Polygon</td>
+        <td width="101">Mp = Multipoint</td>
+        <td width="116">Pl_M = PolylineM</td>
+        <td width="104">Pl_Z = PolylineZ</td>
+        <td width="102">Tbl -&nbsp; table</td>
+      </tr>
+    </table>
+    <table border="1" width="630" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="9%" align="center">Applies To</td>
+        <td width="21%" align="center">File name</td>
+        <td width="57%" align="center">Description</td>
+        <td width="8%" align="center">Field Type</td>
+        <td width="18%" align="center">Notes</td>
+      </tr>
+      <tr>
+        <td width="113%" colspan="5"><p align="center"><strong><a name="Calculate">Calculate -
+        populate a field with some spatial characteristics of the shapes.</a></strong></td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pl_Z</td>
+        <td width="21%">polyline_GetAzimuth.cal</td>
+        <td width="57%">Calculates the azimuth of a polyline in the user spacified point. </td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See the example for polyline_GetAngle</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl_Z</td>
+        <td width="21%">polylineZ_GetSlope.cal</td>
+        <td width="57%">Calculates the slope of a polylineZ in the user specified point</td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See the example for polyline_GetAngle</td>
+      </tr>
+      <tr>
+        <td width="9%">Point</td>
+        <td width="21%">point_Get_X_DMS.cal</td>
+        <td width="57%">Calculates the X coordinates for points in Degrees Minutes Seconds</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Point</td>
+        <td width="21%">point_Get_Y_DMS.cal</td>
+        <td width="57%">Calculates the Y coordinates for points in Degrees Minutes Seconds</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl_Z+Pg_Z</td>
+        <td width="21%">shape_Return3D_Length.cal</td>
+        <td width="57%">Calculates the true 3D length of PolylineZ &amp; PolygonZ shapes.</td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Mp+Pl</td>
+        <td width="21%">mp_get_X_Center.cal</td>
+        <td width="57%">Uses a ConvexHull to calculate the X <span class="content">coordinate</span>
+        of the centroid of multipoints (can be used on polylines as well)</td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Mp+Pl</td>
+        <td width="21%">mp_get_Y_Center.cal</td>
+        <td width="57%">Uses a ConvexHull to calculate the Y <span class="content">coordinate</span>
+        of the centroid of multipoints.</td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">PointM</td>
+        <td width="21%">point_Get_M.cal</td>
+        <td width="57%"><span class="content">calculates the M of points</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">PointZ</td>
+        <td width="21%">point_Get_Z.cal</td>
+        <td width="57%"><span class="content">calculates the Z of points</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl_M</td>
+        <td width="21%">polyline_Get_M_MiddlePoint.cal</td>
+        <td width="57%"><span class="content">calculates the M of the Middle points of polylinesM</span></td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl_Z</td>
+        <td width="21%">polyline_Get_Z_MiddlePoint.cal</td>
+        <td width="57%"><span class="content">calculates the Z of the Middle points of polylinesZ</span></td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl</td>
+        <td width="21%">polyline_Get_Azimuth.cal</td>
+        <td width="57%"><span class="content">calculates the azimuth (0 = North, 90 = East 180 =
+        South 270 = West) of polylines in their middle points</span></td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">Pl</td>
+        <td width="21%">polyline_Get_Azimuth_9x.cal</td>
+        <td width="57%">See above</td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg, Mp</td>
+        <td width="21%">shape_Get_X_Min.cal</td>
+        <td width="57%">Calculates Min X for each shape (left of the bounding rectangle)</td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg, Mp</td>
+        <td width="21%"><span class="content">shape_Get_X_Max.cal</span></td>
+        <td width="57%"><span class="content"></span>Calculates Max X for each shape (right of the
+        bounding rectangle)<span class="content"></span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg, Mp</td>
+        <td width="21%"><span class="content">shape_Get_Y_Min.cal</span></td>
+        <td width="57%"><span class="content"></span>Calculates Min Y for each shape (bottom of
+        the bounding rectangle)<span class="content"></span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg, Mp</td>
+        <td width="21%"><span class="content">shape_Get_Y_Max.cal</span></td>
+        <td width="57%"><span class="content"></span>Calculates Max Y for each shape (top of the
+        bounding rectangle)<span class="content"></span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg, Mp</td>
+        <td width="21%"><span class="content">shape_Get_BoundingRectangle_Area.cal</span></td>
+        <td width="57%"><span class="content">Calculates the area of the bounding rectangle
+        (extent) for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg</td>
+        <td width="21%"><span class="content">shape_Return_Length.cal</span></td>
+        <td width="57%"><span class="content">calculates the length of polylines or the perimeter
+        of polygons</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">All</td>
+        <td width="21%"><span class="content">shape_Status.cal</span></td>
+        <td width="57%"><span class="content">indicates the Null (-1), Empty(0) and Valid(1)
+        shapes</span></td>
+        <td width="8%">Integer</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4"><span class="content">All Z</span></td>
+        <td width="21%"><span class="content">shape_Z_Status.cal</span></td>
+        <td width="57%">indicates the Z status of the shapes</td>
+        <td width="8%">Integer</td>
+        <td width="18%">-2 ==&gt; Null<br>
+          -1 ==&gt; Empty<br>
+          0 ==&gt; NaN Z value exists<br>
+          1 ==&gt; Valid Z values</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4"><span class="content">All M</span></td>
+        <td width="21%"><span class="content">shape_M_Status.cal</span></td>
+        <td width="57%">indicates the M status of the shapes</td>
+        <td width="8%">Integer</td>
+        <td width="18%">-2 ==&gt; Null<br>
+          -1 ==&gt; Empty<br>
+          0 ==&gt; NaN M value exists<br>
+          1 ==&gt; Valid M values</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg, Mp</td>
+        <td width="21%"><span class="content">shape_CountVertices.cal</span></td>
+        <td width="57%"><span class="content">calculates the number of vertices for each shape</span></td>
+        <td width="8%">Long</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg, Mp</td>
+        <td width="21%"><span class="content">shape_CountAllParts.cal</span></td>
+        <td width="57%"><span class="content">calculates the number of parts for each shape</span></td>
+        <td width="8%">Long</td>
+        <td width="18%">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Point</td>
+        <td width="21%"><span class="content">point_Get_X.cal </span></td>
+        <td width="57%"><span class="content">calculates the X coordinate of points</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Point</td>
+        <td width="21%"><span class="content">point_Get_Y.cal </span></td>
+        <td width="57%"><span class="content">calculates the Y coordinate of points</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_X_FromPoint.cal</span></td>
+        <td width="57%"><span class="content">calculates the X of the From (Start) points of
+        polylines</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_Y_FromPoint.cal</span></td>
+        <td width="57%"><span class="content">calculates the Y of the From (Start) points of
+        polylines</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_X_ToPoint.cal</span></td>
+        <td width="57%"><span class="content">calculates the X of the To (End) points of polylines</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_Y_ToPoint.cal</span></td>
+        <td width="57%"><span class="content">calculates the Y of the To (End) points of polylines</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_X_MiddlePoint.cal</span></td>
+        <td width="57%"><span class="content">calculates the X of the Middle points of polylines</span></td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_Y_MiddlePoint.cal</span></td>
+        <td width="57%"><span class="content">calculates the Y of the Middle points of polylines</span></td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_Angle.cal</span></td>
+        <td width="57%"><span class="content">calculates the angle of polylines in their middle
+        points</span></td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">Polyline</td>
+        <td width="21%"><span class="content">polyline_Get_Angle_9x.cal</span></td>
+        <td width="57%">see above</td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_IsClosed.cal</span></td>
+        <td width="57%"><span class="content">indicates Closed (1) and not closed (0) polylines</span></td>
+        <td width="8%">Integer</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_Get_X_Center.cal</span></td>
+        <td width="57%"><span class="content">calculates the X of the centroids (center of
+        gravity) of polygons</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_Get_Y_Center.cal</span></td>
+        <td width="57%"><span class="content">calculates the Y of the centroids (center of
+        gravity) of polygons</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_Get_X_Label.cal</span></td>
+        <td width="57%"><span class="content">calculates the X of the label point (always inside)
+        of polygons</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_Get_Y_Label.cal</span></td>
+        <td width="57%"><span class="content">calculates the Y of the label point (always inside)
+        of polygons</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_Return_Area.cal</span></td>
+        <td width="57%"><span class="content">calculates the area of polygons, the spatial
+        reference and the units for the calculation can be adjusted</span></td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_CountTrueParts.cal</span></td>
+        <td width="57%"><span class="content">calculates the number of parts for each shape (holes
+        not counted as parts)</span></td>
+        <td width="8%">Long</td>
+        <td width="18%">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_Thickness.cal</span></td>
+        <td width="57%"><span class="content">calculates the thickness ratio of each polygon</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%"><span class="content">Pg,Pl</span></td>
+        <td width="21%">polyline_GetBearing.cal</td>
+        <td width="57%"><span class="content">calculates the bearings in ( N 45.00 E ) of
+        polylines in an user specified point</span></td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4"><span class="content">Pg,Pl</span></td>
+        <td width="21%">polyline_GetBearing_9x.cal</td>
+        <td width="57%">see above</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%"><span class="content">Pl_Z,Pg_Z</span></td>
+        <td width="21%">shape_Get_Average_Z.cal</td>
+        <td width="57%"><span class="content">Average Z for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%"><span class="content">Pl_Z,Pg_Z</span></td>
+        <td width="21%">shape_Get_Z_Max.cal</td>
+        <td width="57%"><span class="content">Max Z for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%"><span class="content">Pl_Z,Pg_Z</span></td>
+        <td width="21%">shape_Get_Z_Min.cal</td>
+        <td width="57%"><span class="content">Min Z for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4"><span class="content">Pl_Z,Pg_Z</span></td>
+        <td width="21%">shape_Get_Z_Max_2.cal</td>
+        <td width="57%"><span class="content">Max Z for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4"><span class="content">Pl_Z,Pg_Z</span></td>
+        <td width="21%">shape_Get_Z_Min_2.cal</td>
+        <td width="57%"><span class="content">Min Z for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4"><span class="content">Pl_M,Pg_M</span></td>
+        <td width="21%">shape_Get_M_Max_2.cal</td>
+        <td width="57%"><span class="content">Max M for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4"><span class="content">Pl_M,Pg_M</span></td>
+        <td width="21%">shape_Get_M_Min_2.cal</td>
+        <td width="57%"><span class="content">Min M for each shape</span></td>
+        <td width="8%">Double</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="113%" colspan="5"><p align="center"><strong><a name="Edit">Edit - Edit the
+        shapes</a></strong></td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%">polyline_Offset_Move.cal</td>
+        <td width="57%">Offsets the polyline with the user specified offset distance. Positive
+        values of the offset distance offset the polylines to the right, negative to the left.</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%">polyline_Offset_Copy.cal</td>
+        <td width="57%">Offsets the polyline with the user specified offset distance. Preserves
+        the original polylines and adds the offset one to the same record. </td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">Creates multi-part shape. See the Explode function of ET
+        GeoWizards</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%">polyline_Offset_TwoSide.cal</td>
+        <td width="57%">Offsets the polyline with the user specified offset distance. The original
+        polyline is replaced with the offsets to its both sides</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">Creates multi-part shape. See the Explode function of ET
+        GeoWizards</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%">shape_DensifyByAngle.cal</td>
+        <td width="57%">Implements the &quot;DensifyByAngle&quot; method. Useful before converting
+        true Arcs from GDB to shapefile.</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">Be careful with the tolerances. If too small the ArcMap
+        might crush!</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg</td>
+        <td width="21%">shape_Densify.cal</td>
+        <td width="57%">Converts the Shape into a Shape composed of Line segments with length
+        dTol1 (or less) that are within dTol2 of the original shape</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl, Pg</td>
+        <td width="21%">shape_Generalize.cal</td>
+        <td width="57%">Generalizes the Shape using the Douglas-Poiker algorithm. </td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_To_Line.cal</span></td>
+        <td width="57%"><span class="content">Converts polylines to lines defined by their From
+        and To points</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_To_BoundingRectangle.cal</span></td>
+        <td width="57%"><span class="content">Converts polygons to their bounding rectangles
+        (envelopes)</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">Polygon_To_ConvexPolygon.cal</span></td>
+        <td width="57%"><span class="content">Converts polygons to convex polygons defined by
+        their vertices</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">Polygon_Buffer.cal</span></td>
+        <td width="57%"><span class="content">Replaces polygons with their buffered equivalent.</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">Polygon_To_EqualAreaCircle.cal</span></td>
+        <td width="57%"><span class="content">Converts polygons to circles with area equal to the
+        original polygons and center in the Centroids of the polygons</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%"><span class="content">polyline_Flip.cal</span></td>
+        <td width="57%"><span class="content">reverses the direction of polylines</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Point</td>
+        <td width="21%">point_Disperse.cal</td>
+        <td width="57%">Moves the points randomly within user specified tolerance</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Point</td>
+        <td width="21%">point_MoveTo.cal</td>
+        <td width="57%">Moves the points to new locations. The new X &amp; Y taken from two fields
+        in the attribute table</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">Point</td>
+        <td width="21%">point_MoveTo_9x.cal</td>
+        <td width="57%">see above</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">Point</td>
+        <td width="21%">create_Lines_FromPoints.cal</td>
+        <td width="57%">Creates polylines in the target layer. Start points -
+          the points of the input layer. User defined length and angle</td>
+        <td width="8%">Integer</td>
+        <td width="18%" bgcolor="#9DFF9D">Dummy field</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">Polygon</td>
+        <td width="21%">polygon_Scale.cal</td>
+        <td width="57%">Scales the polygons with user defined scale factor.
+          Origin - in the centroid of the original polygon&nbsp;</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">Polyline</td>
+        <td width="21%">polyline_Set_M.cal</td>
+        <td width="57%">Sets constant user defined M value for the polylines</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">Polyline</td>
+        <td width="21%">polyline_Set_Z.cal</td>
+        <td width="57%">Sets constant user defined Z value for the polylines</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">All M</td>
+        <td width="21%">shape_Multiply_Ms.cal</td>
+        <td width="57%">Multiplies all M values of a shape with user defined
+          factor</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">All Z</td>
+        <td width="21%">shape_Multiply_Zs.cal</td>
+        <td width="57%">Multiplies all Z values of a shape with user defined
+          factor</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">All M</td>
+        <td width="21%">shape_Offset_M.cal</td>
+        <td width="57%">Adds user defined M value to all vertices of the shape</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">All Z</td>
+        <td width="21%">shape_Offset_Z.cal</td>
+        <td width="57%">Adds user defined Z value to all vertices of the shape</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Polyline</td>
+        <td width="21%">polyline_rotate_byFieldValues.cal</td>
+        <td width="57%">Rotates the polylines with an angle from a field. The rotation point for
+        each polyline is on the polyline - defined by the user. (dafault - the middle point)</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Polygon</td>
+        <td width="21%">polygon_rotate_byFieldValues.cal</td>
+        <td width="57%">Rotates the polylines with an angle from a field. The rotation point is
+        the centroid of each polygon.</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%">close_Polygons.cal</td>
+        <td width="57%">Closes the non closed polygons.</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polyline</td>
+        <td width="21%">close_Polylines.cal</td>
+        <td width="57%">Closes the polylines by introducing a new segment</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Pg,Pl</td>
+        <td width="21%">clean_Shapes.cal</td>
+        <td width="57%">Performs basic clean of the shapes</td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_To_BoundingRectangle2.cal</span></td>
+        <td width="57%"><span class="content">Converts polygons to their bounding rectangles.</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">Polygon</td>
+        <td width="21%"><span class="content">polygon_FillHoles.cal</span></td>
+        <td width="57%"><span class="content">Fills the holes in polygons</span></td>
+        <td width="8%">Shape</td>
+        <td width="18%" bgcolor="#9DFF9D">If island polygons are present, the result will contain
+        overlaps</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl,Pg</td>
+        <td width="21%"><span class="content">point_along_polyline.cal</span></td>
+        <td width="57%"><span class="content">Creates point/s in the target layer at the specified
+        distance along the selected polylines</span></td>
+        <td width="8%">Integer</td>
+        <td width="18%" bgcolor="#9DFF9D" rowspan="3">Dummy field.<p>Requires a target layer from
+        the appropriate type. The index of the target layer in the TOC can be specified.</td>
+      </tr>
+      <tr>
+        <td width="9%">Point</td>
+        <td width="21%"><span class="content">create_Rectangles_FromPoints.cal</span></td>
+        <td width="57%"><span class="content">Creates rectangles in the target layer from the
+        points. Rotation angle can be from a field or the same for all shapes. The source points -
+        center of the rectangles</span></td>
+        <td width="8%">Integer</td>
+      </tr>
+      <tr>
+        <td width="9%">Point</td>
+        <td width="21%"><span class="content">create_Rectangles_FromPoints2.cal</span></td>
+        <td width="57%"><span class="content">Creates rectangles in the target layer from the
+        points. User specifies which corner of the rectangle will be in the source point.</span></td>
+        <td width="8%">Integer</td>
+      </tr>
+      <tr>
+        <td width="113%" colspan="5"><p align="center"><strong><a name="Field">Field - calculate
+        the values of a field based on another field</a></strong></td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_dd2dms_long.cal</td>
+        <td width="57%">Converts X coord. values in Decimal Degrees from a numeric field to
+        longitude strings in Degrees Minutes Seconds </td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_dd2dms_lat.cal</td>
+        <td width="57%">Converts Y coord. values in Decimal Degrees from a numeric field to
+        longitude strings in Degrees Minutes Seconds </td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_Mark_Duplicates_2.cal</td>
+        <td width="57%">Calculates a unique number for each occurence of a value in a field. </td>
+        <td width="8%">Long</td>
+        <td width="18%">Example:<br>
+        a==&gt;1<br>
+        b==&gt;1<br>
+        c==&gt;1<br>
+        b==&gt;2<br>
+        b==&gt;3<br>
+        a==&gt;2</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">rec_Number_ConstantLengthString.cal</td>
+        <td width="57%" rowspan="3">Populates the field with consecutive numbers represented by a
+        constatnt length string. Starting number, thestep size and the length of the string can be
+        adjusted</td>
+        <td width="8%" rowspan="3">String</td>
+        <td width="18%" bgcolor="#9DFF9D" rowspan="3">Example:<br>
+        000001<br>
+        000002<br>
+        ...........<br>
+        000011<br>
+        ...........<br>
+        000345</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">All+Tbl</td>
+        <td width="21%">rec_Number_ConstantLengthString2.cal</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">All+Tbl</td>
+        <td width="21%">rec_Number_ConstantLengthString3.cal</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_DMS2DD.cal</td>
+        <td width="57%">Converts the values of a Degree Minutes Secons string field to numbers in
+        Decimal Degrees. </td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">See Example</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tb</td>
+        <td width="21%">field_Mark_Duplicates.cal</td>
+        <td width="57%">All records with values in the specified field, that duplicates an already
+        existing value will be marked with 1. The records with no duplicates will get a value of 0</td>
+        <td width="8%">Integer</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_Mark_Duplicates.cal1</td>
+        <td width="57%">All records with values in the specified field, that duplicates an already
+        existing value will be marked with the ID of the record they duplicate. The records with
+        no duplicates will get a value of -1</td>
+        <td width="8%">Long</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">rec_Number.cal</td>
+        <td width="57%">Populates the field with consecutive numbers. Starting number and a step
+        size can be adjusted</td>
+        <td width="8%">Long</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">All+Tbl</td>
+        <td width="21%">field_CumulateValues.cal</td>
+        <td width="57%">Calculates the cumulative values of a records in a number field.</td>
+        <td width="8%">Double</td>
+        <td width="18%" bgcolor="#9DFF9D">Example:<br>
+        5==&gt;5<br>
+        2==&gt;7<br>
+        10==&gt;17<br>
+        3==&gt;20</td>
+      </tr>
+      <tr>
+        <td width="9%">All</td>
+        <td width="21%">get_Subtype_Name.cal</td>
+        <td width="57%">converts the subtypes in a feature class from a GDB to texts, so they can
+        be exported to a shapefile</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">azimuth_To_Bearing.cal</td>
+        <td width="57%">Convert Azimuth in DD to Bearings</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D"><p align="center">143.44&nbsp;<br>
+        =&gt;<br>
+        &nbsp;S 36.56 E&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_String_To_ConstantLengthString.cal</td>
+        <td width="57%" rowspan="2">Convert Strings To Constant length strings</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D" rowspan="2">Example:<br>
+        A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ==&gt;00000A<br>
+        AB&nbsp;&nbsp; ==&gt;0000AB<br>
+        ABC==&gt;000ABC<br>
+        </td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_String_To_ConstantLengthString2.cal</td>
+        <td width="8%">String</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_BasicTrim.cal</td>
+        <td width="57%">Removes leading and trailing occurrences of a character from a string</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">Example:<br>
+        bbbtr eebbaa bb ==&gt;<br>
+        tr eebbaa</td>
+      </tr>
+      <tr>
+        <td width="9%">All+Tbl</td>
+        <td width="21%">field_Date_Stamp.cal</td>
+        <td width="57%">Adds current data in a user specified format to selected records</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFA4A4">All+Tbl</td>
+        <td width="21%">field_SplitString.cal</td>
+        <td width="57%">&nbsp;</td>
+        <td width="8%">String</td>
+        <td width="18%" bgcolor="#9DFF9D">Example:<br>
+          abc#12 ==&gt;abc<br>
+          abcd#1 ==&gt;abcd</td>
+      </tr>
+      <tr>
+        <td width="113%" colspan="5"><p align="center"><strong><a name="Draw">Draw - Use the field
+        calculator as a tool to draw graphics in the view</a></strong></td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Pl,Pg,Pnt</td>
+        <td width="21%">features_To_Graphics.cal</td>
+        <td width="57%">Converts the features to graphic elements</td>
+        <td width="8%">Any</td>
+        <td width="18%" bgcolor="#9DFF9D">Dummy field</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Polyline</td>
+        <td width="21%">draw_Point_OnPolyline.cal</td>
+        <td width="57%">Draws point on each polyline. User specified location of the point</td>
+        <td width="8%">Any</td>
+        <td width="18%" bgcolor="#9DFF9D">Dummy field</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Pl,Pg,Pnt</td>
+        <td width="21%">draw_Circle_inTheCentre.cal</td>
+        <td width="57%">Draws a circle for each shape. The radius can be the same for each shape
+        or taken from a numeric field</td>
+        <td width="8%">Any</td>
+        <td width="18%" bgcolor="#9DFF9D">Dummy field</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Pl,Pg,Pnt</td>
+        <td width="21%">draw_Buffer.cal</td>
+        <td width="57%">Draws a graphic buffer for each shape</td>
+        <td width="8%">Any</td>
+        <td width="18%" bgcolor="#9DFF9D">Dummy field</td>
+      </tr>
+      <tr>
+        <td width="9%" bgcolor="#FFFFE6">Pl,Pg</td>
+        <td width="21%">draw_Bounding_Rectangle.cal</td>
+        <td width="57%">Draws the bounding rectangle for each shape</td>
+        <td width="8%">Any</td>
+        <td width="18%">Dummy field</td>
+      </tr>
+      <tr>
+        <td width="9%">Pl,Pg</td>
+        <td width="21%">draw_Shape_Vertices.cal</td>
+        <td width="57%">&nbsp;</td>
+        <td width="8%">Any</td>
+        <td width="18%">Dummy field</td>
+      </tr>
+      <tr>
+        <td width="9%">Point</td>
+        <td width="21%">draw_PointSquareBuffer.cal</td>
+        <td width="57%">Draws Square/Rectangular buffers around the points. A rotation angle can
+        be assigned for all the records or from a field.</td>
+        <td width="8%">Any</td>
+        <td width="18%" bgcolor="#9DFF9D">Dummy field</td>
+      </tr>
+    </table>
+    <table border="0" width="630" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;<p><strong><span class="content">Notes:</span> </strong><ol>
+          <li><span class="content">The result values for the functions that return coordinates,
+            length and area will be in the projection of the View Frame</span></li>
+          <li><span class="content">For best results the fields should be from the types indicated in
+            the table above</span></li>
+          <li>The expressions with indicated Field Type of <strong>SHAPE</strong> should be used only
+            on the SHAPE field.&nbsp; <font color="#FF0000">Caution: The changes are applied directly
+            on the original data set. If the expressions are applied out of an Editing session the
+            changes will be irreversible. If you however want to use these or similar expression out
+            of an Editing session, make sure to create a backup of the original data set.</font></li>
+          <li>The calculation will be performed only on the selected records. If there is no selection
+            - values for all the records will be calculated</li>
+        </ol>
+        <p><strong><a name="Examples">Examples</a>:</strong> <ul>
+          <li><font color="#000000"><strong><span class="content">polyline_Get_X_MiddlePoint.cal</span></strong>,<span
+            class="content"> <strong>polyline_Get_X_MiddlePoint.cal</strong></span> and <strong><span
+            class="content">polylineGet_Angle.cal</span></strong></font> can be easily changed to
+            return the characteristics for any other point of the polylines. Only the values of the <font
+            color="#FF0000">dDistance</font> and/or <font color="#FF0000">bAsRatio</font> variables
+            have to be changed in the Pre-Logic box of the Field Calculator.</li>
+        </ul>
+        <table border="1" width="600">
+          <tr>
+            <td width="25%">&nbsp;</td>
+            <td width="25%"><font color="#FF0000">dDistance</font></td>
+            <td width="25%"><font color="#FF0000">bAsRatio</font></td>
+            <td width="25%">Description</td>
+          </tr>
+          <tr>
+            <td width="25%">Default</td>
+            <td width="25%">0.5</td>
+            <td width="25%">True</td>
+            <td width="25%">Middle Point (angle at Middle Point)</td>
+          </tr>
+          <tr>
+            <td width="25%">Example 1</td>
+            <td width="25%">0.3</td>
+            <td width="25%">True</td>
+            <td width="25%">Point (angle at Point) located on a distance 30% of the total length of
+            the polyline from the start point along the polyline</td>
+          </tr>
+          <tr>
+            <td width="25%">Example 2</td>
+            <td width="25%">10</td>
+            <td width="25%">False</td>
+            <td width="25%">Point (angle at Point) on the polyline 10 map units from the start point
+            of the polyline along the polyline</td>
+          </tr>
+        </table>
+        <ul>
+          <li><span class="content"><strong>shape_CountAllParts.cal</strong> and <strong>polygon_CountTrueParts.cal
+            </strong>can be used together to find the polygons with holes or islands in a polygon data
+            set. Use them on two different fields and then select all the records for which the
+            results from the first expression are not equal to the results from the second one. The
+            selected polygons will contain an island polygon or will have a hole.</span></li>
+          <li><span class="content"><strong>polygon_Thickness.cal </strong>can be used to identify the
+            skinny polygons in a polygon data set. For polygons with close to circular shape the
+            results will be close to 1. The thinner the polygons are, the smaller the ratio will be.
+            Using this expression one can identify the sliver polygons which are normally very thin.</span></li>
+          <li><strong>field_DMS2DD.cal - </strong>A DMS string in virtually any format is accepted.
+            Any character delimiter except &quot;.&quot; (used as a decimal point) can be used. The
+            letters &quot;E&quot;, &quot;W&quot;, &quot;N&quot; &amp; &quot;S&quot; are used to
+            determine the location of the Lat/Long coordinate. They can be used as delimiters, but the
+            last occurrence of the letter in the DMS string will define the sign of the coordinate.
+            The expression checks for validity of the DD coordinate - all the valid Longitudes should
+            be between -180.00 and 180 degrees. If you want to check for Latitude validity you have to
+            replace these values to -90.00 to 90 degrees. The records with string values that the
+            expression could not standardize will be assigned a value of 0.00.<br>
+          </li>
+        </ul>
+        <table border="1" width="600">
+          <tr>
+            <td width="33%">Input string </td>
+            <td width="33%">Standardized string </td>
+            <td width="34%">Decimal Degrees</td>
+          </tr>
+          <tr>
+            <td width="33%">37 45 23 S </td>
+            <td width="33%">37 45 23 S </td>
+            <td width="34%">-37.7564 </td>
+          </tr>
+          <tr>
+            <td width="33%">37º45'23&quot;N </td>
+            <td width="33%">37 45 23 N </td>
+            <td width="34%">37.7564 </td>
+          </tr>
+          <tr>
+            <td width="33%">123456 </td>
+            <td width="33%">12 34 56 </td>
+            <td width="34%">12.5822 </td>
+          </tr>
+          <tr>
+            <td width="33%">1234567 </td>
+            <td width="33%">123 45 67 </td>
+            <td width="34%">123.769 </td>
+          </tr>
+          <tr>
+            <td width="33%">W?37?45?23 </td>
+            <td width="33%">37 45 23 W </td>
+            <td width="34%">-37.7564 </td>
+          </tr>
+          <tr>
+            <td width="33%">37-23.123-s </td>
+            <td width="33%">37 23.123 0 s </td>
+            <td width="34%">-37.3854 </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    <p align="center"><font color="#C0C0C0"><small>For any comments and enquiries contact: <a
+    href="mailto:webmaster@ian-ko.com">webmaster@ian-ko.com</a></small><br>
+    <small><small>All ESRI products mentioned are trademarks of Environmental Systems Research
+    Institute, Inc.</small></small><br>
+    <small><small>Copyright: Ianko Tchoukanski</small></small></font></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>README for ArcGIS Explorer Custom Task Project Template</title>
+  <style type="text/css">
+      div#hsprojectnamebanner, div#hspagetitlebanner, table.hsprojectnametable, div#hspagetop
+      {
+        background-color: #ccccff;
+        font-size: 90%;
+      }
+      body
+      {
+	      background: 	#FFFFFF;
+	      color: 			#000000;
+	      font-family: 	Verdana, Arial, Helvetica, sans-serif;
+	      font-size:    medium;
+	      font-style: 	normal;
+	      font-weight: 	normal;
+	      margin-top:		0;
+	      margin-bottom:	0;
+	      margin-left:	12;
+	      margin-right:	0;
+	      width: 			100%;
+	      padding-right: 12px; 
+	      padding-left: 12px; 
+	      padding-bottom: 12px; 
+	      padding-top: 12px;
+      }
+      dt
+      {
+	      font-style:	italic;
+      }
+      dd
+      {
+	      margin-bottom: 	0;
+	      margin-left: 	0;
+      }
+      ul
+      {
+	      margin-left: 	17;
+	      list-style-type: disc;
+      }
+      ol
+      {
+	      margin-left: 	24;
+	      list-style-type: decimal;
+      }
+      li
+      {
+	      margin-bottom: 	3;
+      }     	
+      p
+      {
+	      margin-top: 	15;
+	      margin-bottom: 	15;
+      }      
+      code
+      {
+	      font-family:	Monospace, Courier New, Courier;
+	      font-size: 	105%;
+	      color: 		#0000EE;
+      }
+      /* Applies to everything below the non-scrolling header region. */
+      div#pagebody
+      {
+	      font-size: 	70%;
+	      width: 		100%;
+      }
+      div#mainbody
+      {
+	      font-size: 		90%;
+	      margin-left: 	5;
+	      margin-top: 	10;
+	      padding-bottom: 20;
+      }
+      div#pagetop
+      {
+	      background-color: #ccccff;
+	      padding-top:	0;
+	      padding-bottom:	0;
+	      padding-left:	0;
+	      padding-right:	0;
+	      width:			100%;
+	      border-bottom-style: solid;
+	      border-bottom-width: 1px;
+	      border-bottom-color: #c8cdde;	
+      }
+
+      /* Applies to both tables in the non-scrolling header region. */
+      div#pagetop table
+      {
+	      width:			100%;
+      }
+
+      /* Applies to cells in both tables in the non-scrolling header region. */
+      div#pagetop table td
+      {
+	      color: 			#0000FF;
+	      font-size: 		70%;
+	      margin-top:		0;
+	      margin-bottom:	0;
+	      padding-right: 	20;
+      }
+
+      /* Applies to the last row in the upper table of the non-scrolling header region. */
+      div#pagetop table tr#pagetoptable1row3 td
+      {
+	      padding-bottom: 2;
+	      padding-top: 	5;
+      }
+
+      /* Applies to the running header text in the first row of the upper table in the
+         non-scrolling header region. */
+      span#projecttitle
+      {
+	      color: 		#003399;
+	      font-size: 	90%;
+      }
+
+      /* Applies to the topic title in the second row of the upper table in the
+         non-scrolling header region. */
+      span#pagetitle
+      {
+	      color: 			#003399;
+	      font-size: 		100%;
+	      font-weight: 	600;
+      }
+
+      div#pagefooter
+      {
+	      font-size: 		60%;
+	      margin-top:		0;
+	      margin-bottom:	0;
+	      margin-left:	0;
+	      margin-right:	0;
+	      padding-top:	2;
+	      padding-bottom:	6;
+	      padding-left:	5;
+	      padding-right:	2;
+	      width:			100%;
+      }
+      .heading, h1, h2, h3, h4
+      {
+	      font-weight:	bold;
+	      margin-top:		18;
+	      margin-bottom:	8;
+      }
+      h1, h2
+      {
+	      font-size:	110%;
+	      color: 		#003399;
+      }
+      h3, h4
+      {
+	      font-size: 	100%;
+	      color: 		#000000;
+      }
+    </style>
+</head>
+<body>
+  <div id="hspagetop">
+    <div id="hsprojectnamebanner">ArcGIS Explorer Custom Template</div>
+    <div id="hspagetitlebanner"><h1 class="hsbanner" >
+      Readme File</h1></div>
+  </div>
+  
+  <div id="pagebody">
+    <p>Below you can find some information on setting up and using this template.</p>
+    <h1>
+      Coding your custom task</h1>
+    <p>
+      The template code which has been added to your new project defines a functioning
+      custom task. If this is the first time you have used the template, you should familiarize
+      yourself with the contents of the project.</p>
+    <ul>
+    <li>Open the code view of the <em>CustomTaskUI</em> class; this class provides information
+      to the ArcGIS Explorer application about the custom task.<br />
+      <span style="color: #003399">The existing code in this class links together the <em>
+        CustomTaskUI</em> and <em>CustomTaskControl</em> classes, and provides icons and
+        a context menu for results arising from the task execution.</span></li>
+      <li>Open the Designer View of the <em>CustomTaskControl</em> class; this class provides
+        the user interface for the task, by inheriting from the System.Windows.Forms.UserControl
+        class. In this class you can add code to work with the E2API namespace and extract
+        information which you wish to display to the user or to pass to the <em>CustomTask</em>.
+        <br />
+        <span style="color: #003399">The existing code in this class allows a user to click on a button and then click on the current map view in explorer. Clicking the Find button will
+      add a parameter containing the location information to a ParameterSet, and then start the CustomTask
+        executing by calling <em>ProcessTask</em>, passing in the <em>ParameterSet</em>
+        of information collected from the user click.</span> </li>
+      <li>Open the code view of the Task file, called <em>CustomTask</em>. In the <em>Execute</em>
+        method you can add code to perform
+      the main function of your custom task.&nbsp;<br />
+        <span style="color: #003399">The existing code in this class takes the input coordinates and <em>Geometry</em>
+        and creates a <em>PlaceResult</em> from this information.</span></li>
+    </ul>
+    
+    <h1>Testing your custom task</h1>
+    
+    <p>In order to use your custom task, you need to build it and then add it to a map.
+    </p>
+    
+    <h3>Build the Task DLL</h3>
+    <ol>
+      <li>Build your custom task project. </li>
+      <li>
+				<p>In Visual Studio 2005, open the solution and build it.</p>
+				<p>NOTE: see the 'Building and Using the samples' topic in the help system for more information about how 
+        the task created by this project will be automatically set up ready for you to use in ArcGIS Explorer by 
+					building the project, using a project post-build event and the CopyToTasks tool. Having this post build 
+					step ensures two things:
+				</p>
+
+				<ul>
+					<li>The new task is ready to use as soon as you build it.</li>
+					<li>Each time you rebuild your project, the new version will be copied automatically to the Tasks 
+					folder so that you can test it straight away. </li>
+				</ul>
+				<p>Note that if you are using Visual Studio Express editions, post build events cannot be edited using 
+				the Visual Studio Express edition user interface. For more information, see the 
+				<a href="ms-help://E2APIHelp/Explorer_NET/UsingVisualStudio.html">Using Visual Studio</a>
+				 topic	in the ArcGIS Explorer Developer Help.</p>
+    </li>
+    </ol>
+    <h3>Use the Task DLL</h3>
+    <ol>
+    <li>
+      Open ArcGIS Explorer, and open the map that you wish to add your task to.
+    </li>
+    <li>
+      Choose Tools, Manage Tasks.
+    </li>
+    <li>
+      As the post-build step of the template has automatically set up the task for you to test, you 
+      should now see the name of your new task listed in the left-hand pane.
+    </li>
+    <li>
+      Select your task and click the arrow in the center to add the task to the current
+      map.
+    </li>
+    <li>
+      Click OK to dismiss the dialog.
+    </li>
+    </ol>
+    <p>
+      You should now see your custom task listed in the task center.
+    </p>
+		<p>
+			An alternative method is to open a map, and then use the Add Content option in the
+			File menu to again browse to an NMF file which contains your task information.
+			See the help topics about NMF files and Tasks for more information.</p>
+    <p>
+      Click on the button with the 'flash' icon and then click somewhere on the map. You
+      should see a result added to the results window, and a blue pushpin indicating the
+      location where you clicked the map.
+    </p>
+    <h1>
+      Deploying your custom task
+    </h1>
+    <p>
+      At the point when you are ready to deploy your custom task to others, you have a
+      number of options available.
+    </p>
+    <ul>
+      <li>Place the custom Task at a server location which will be available to your users,
+        and edit the DownloadLocation element in the .NMF file to reflect this location.
+        Then add the custom Task to a Map, and publish the Map to the Server. Users can
+        then open the Map from the server, and the Task DLL will be downloaded to their
+        machine.</li>
+      <li>Place the custom task on a server and edit the DownloadLocation of the .NMF file
+        accordingly. Then add the task to a map, and save the map locally. You can then
+        give this map to another user, and the DownloadLocation saved in to that map will
+        be used to attempt to download the task DLL on the other users machine when they
+        open the map.</li>
+      <li>You can give your custom task directly to another user; they must follow a similar
+        procedure to run the task as you used above; put the task in the Tasks directory
+        and add it to the Map using the .NMF file.</li>
+    </ul>
+    <p>
+      NOTE: The downloading of custom tasks is handled by the NMF file in all cases; if
+      you save a map with your custom task included, the DownloadLocation from the .NMF
+      file you chose is also included in the map, and will be used to attempt to download
+      the custom task when other users open that map.
+      Ensure the .NMF file includes the correct information for the location, name and version of your custom project binary
+      file, and that location is accessible by the user.
+    </p>
+		<p>
+			Refer to the Adding and Deploying Custom Tasks section of the ArcGIS Explorer Developer Help
+			system for more information.</p>
+    
+  </div>
+  
+  <div id="pagefooter">
+
+    <p>
+      &nbsp;</p>
+    <hr size="1"/>
+    <p>
+      &copy; 2006 ESRI Inc.</p>
+  </div>
+</body>
+</html>

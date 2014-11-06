@@ -1,0 +1,256 @@
+VBA: Link From ArcMap to Google Maps  	  PDF   	  Print   	  E-mail
+
+Written by Bert Granberg,
+
+Ever wanted to link from an open ArcMap project directly to a Google Maps or Google Maps Street View (available in the Wasatch Front urban areas) in a browser?
+
+Update, August 20, 2009
+
+    * Or want to link to Micrsoft Bing Maps?? Check out the User Comments at the very bottom of this page for a modification to allow the choice of Google or Bing maps. 
+
+The code below can be paired with an ArcMap custom tool to open your default browser to a Google map at the location at which your ArcMap dataframe was clicked. The default link is to open a north-facing Street View window in the google map if available.
+
+Here's how
+
+Part I. Paste code into VBA Editor
+
+1) From the ArcMap menu, navigate to Tools --> Macros --> Visual Basic Editor to open the VBA editor
+
+2) In the VBA Editor's Project Window, expand the Project --> Arcmap Objects folder and double click on ThisDocument
+
+3) Paste the code (below) in the window that opens and close the VBA editor.
+
+4) Save your project
+
+Part II. Create and configure custom ArcMap Tool
+
+1) From the ArcMap menu, navigate to Tools -->Customize
+
+2) Click the Commands tab.
+
+3) Click the drop-down arrow on the Save in combo box, then change the selected item so it is the current name of your ArcMap project (ex. Untitled.mxd)
+
+4) Click [UIControls] in the Categories list. then Click the New UIControl button.
+
+5) Click the UIToolControl radio button and then click Create.
+
+6) The name of the new tool appears in the Commands list. Single click the newly created UIControl, then click it again to activate in-place editing, then type a new name for the control so it reads Project.GoogleMap_Link.
+
+7) Click and drag the newly created UIControl and drop it on an ArcMap toolbar or menu.
+
+8) On the toolbar or menu, right-click the command to set its image, caption, and other properties.
+
+9) Save Project and start using the tool.
+
+ 
+
+Note: Your ArcMap dataframe cannot have an undefined spatial reference system.
+Option Explicit
+
+Const SW_SHOWMAXIMIZED = 3
+Const SW_SHOWMINIMIZED = 2
+Const SW_SHOWDEFAULT = 10
+Const SW_SHOWMINNOACTIVE = 7
+Const SW_SHOWNORMAL = 1
+
+Private Declare Function ShellExecute Lib "shell32.dll" _
+Alias "ShellExecuteA" (ByVal hWnd As Long, _
+ByVal lpOperation As String, ByVal lpFile As String, _
+ByVal lpParameters As String, ByVal lpDirectory As String, _
+ByVal nShowCmd As Long) As Long
+
+Private Function OpenLocation(URL As String, WinState As Long) As Long
+
+    'PURPOSE: Opens default browser to display URL
+
+    'RETURNS: module handle to executed application or
+    'Error Code ( < 32) if there is an error
+
+    'can also be used to open any document associated with
+    'an application on the system (e.g., passing the name
+    'of a file with a .doc extension will open that file in Word)
+
+    Dim lHWnd As Long
+    Dim lAns As Long
+
+    lAns = ShellExecute(lHWnd, "open", URL, vbNullString, _
+    vbNullString, WinState)
+   
+    OpenLocation = lAns
+
+    'ALTERNATIVE: if not interested in module handle or error
+    'code change return value to boolean; then the above line
+    'becomes:
+
+    'OpenLocation = (lAns > 32)
+
+End Function
+
+
+Private Sub GoogleMap_Link_MouseDown(ByVal button As Long, ByVal shift _
+            As Long, ByVal x As Long, ByVal y As Long)
+    
+    Dim pMxDoc As IMxDocument
+    Dim pApp As IMxApplication
+    Dim pMap As IMap
+    Dim pPoint As IPoint
+    Dim pSpatialReferenceFactory As ISpatialReferenceFactory
+    Dim pSpatialReference As ISpatialReference
+    
+    Set pMxDoc = ThisDocument
+    Set pMap = pMxDoc.FocusMap
+    Set pApp = Application
+
+    Set pSpatialReferenceFactory = New SpatialReferenceEnvironment
+    Set pSpatialReference = pSpatialReferenceFactory. _
+        CreateGeographicCoordinateSystem(esriSRGeoCS_WGS1984)
+    
+    ' convert mouse click to map units
+    Set pPoint = pApp.Display.DisplayTransformation.ToMapPoint(x, y)
+    Set pPoint.SpatialReference = pMap.SpatialReference
+    If pPoint.SpatialReference.Name <> pSpatialReference.Name Then
+        pPoint.Project pSpatialReference
+    
+    End If
+    
+    Dim URLstr As String
+    Dim returnLong As Long
+    
+    'more info on google map URL query string request setting parameters:
+    'http://mapki.com/index.php?title=Google_Map_Parameters
+    
+    'STREET VIEW USE THIS FUNCTION
+    URLstr = "http://www.google.com/maps?ie=UTF8&layer=c&cbll=" & _
+             pPoint.y & "," & pPoint.x & "&cbp=1,0,,0,5&ll=" & pPoint.y _
+             & "," & pPoint.x & "&z=16"
+             
+    'REGULAR MAP USE THIS FUNCTION ... NO STREETVIEW WINDOW
+    'URLstr = "http://www.google.com/maps?ie=UTF8&ll=" & pPoint.y _
+             & "," & pPoint.x & "&spn=0.015045,0.016844&z=16"
+             
+    'Use one of the constants as the window state parameter
+    returnLong = OpenLocation(URLstr, SW_SHOWNORMAL)
+
+End Sub
+
+Users' Comments   	
+ 
+	
+
+Display 10 of 10 comments
+
+1. Wed, 06-25-2008 at 10:21 AM
+Somehow it dont work for me. There is nothing in click event??? do i need to change anything??
+» Reply to this comment...
+» See all 1 replie(s)
+Zahid Chaudhry
+
+2. Wed, 06-25-2008 at 10:41 AM
+Thanks. I changed to UIToolControl and it does work good. Great Tool.
+» Reply to this comment...
+Zahid Chaudhry
+
+3. Mon, 06-30-2008 at 04:48 PM
+When I try and rename the UIToolcontrol it always goes back to Normal.GoogleMap_Link and the button does nothing on click. What am I doing wrong?  
+ 
+Excited to get it to work! 
+ 
+Mike
+» Reply to this comment...
+» See all 1 replie(s)
+Michael Tafel
+
+4. Tue, 01-06-2009 at 03:39 PM
+Is there a parameter to auto-hide the text panel which appears on the left of the screen? 
+ 
+PS. To diplay the split screen (panorama on top/ map on bottom) change cbp=11. 
+ 
+URLstr = "http://www.google.com/maps? ie=UTF8&layer=c&cbll=" & _ 
+pPoint.y & "," & pPoint.x & "&cbp=11,0,,0,5&ll=" & pPoint.y _ 
+& "," & pPoint.x & "&z=16"
+» Reply to this comment...
+Ryan Cook
+
+5. Fri, 01-09-2009 at 01:15 PM
+Has anyone taken this code and converted it to something else like vb or c # and created a dll from it?
+» Reply to this comment...
+Henry Kovacs
+
+6. Wed, 07-01-2009 at 02:25 PM
+Place the code in normal.mxt and create an new normal.googlemap_link UIControl button and the tool will be available in all new projects.
+» Reply to this comment...
+Matt Eitrem
+
+7. Thu, 08-20-2009 at 08:47 PM
+Link to Bing Maps Too. 
+ 
+I received this nice modification from Edwin Abbey of the Florida Department of Environmental Protection. - Bert 
+ 
+Quote
+I have modified the code to offer the user the option of using Bing Maps or Google maps. Bing has some excellent imagery including their oblique ‘eagle eye’ imagery. 
+ 
+In lieu of creating a separate form for the option, I used a simple msgbox so the user doesn’t have to type any information to determine which website to use as well as to keep it easier to load onto other’s computers. 
+ 
+The additional code is as follows, placed just before the final launch of the URL:
+ 
+ 
+Code: 
+Dim webmapchoice 
+ 
+webmapchoice = MsgBox("Launch web map application?" & vbCrLf & vbCrLf _ 
+& "Click YES for BING Maps" _ 
+& vbCrLf & "Click NO for GOOGLE Maps" _ 
+& vbCrLf & vbCrLf & "or CANCEL to exit.", vbYesNoCancel, "WEB RESOURCES") 
+ 
+Select Case webmapchoice 
+ 
+Case 6 
+URLstr = "http://www.bing.com/maps/ default.aspx?v=2&cp=" & _ 
+pPoint.y & "~" & pPoint.x & "&lvl=/8&style=o&dir=0" 
+' goto http://www.bing.com/community/ blogs/maps/archive/2008/04/10/ live-search-maps-api.aspx 
+' for additional parameters to enter for Bing Maps  
+ 
+Case 7 
+URLstr = "http://www.google.com/maps? ie=UTF8&layer=c&cbll=" & _ 
+pPoint.y & "," & pPoint.x & "&cbp=1,0,,0,5&ll=" & pPoint.y _ 
+& "," & pPoint.x & "&z=16" 
+ 
+Case 2 
+Exit Sub 
+ 
+End Select 
+ 
+ 
+ 
+ 
+ 
+Thanks again for providing the original code. 
+ 
+ 
+ 
+Have a great afternoon.
+» Reply to this comment...
+Bert Granberg
+
+8. Tue, 10-13-2009 at 11:49 AM
+Hi, I couldn't quite get the Bing Birds Eye View to come up. Is there any constraints as to coordinate system or zoom scale you need to have to get it to work? The selection box and Street View works fine.
+» Reply to this comment...
+G Alan Wood
+
+9. Mon, 10-26-2009 at 11:13 AM
+Bert, 
+This is one of my favorite tools. I use it almost every day.  
+Is anyone at AGRC able to translate this functionality into Python? 
+9.4 will be coming soon.
+» Reply to this comment...
+» See all 1 replie(s)
+Michael Philp
+
+10. Fri, 03-26-2010 at 03:00 AM
+Hello, Can please someone help me? 
+The bing option does work, but when I choose for Google , I get a google map, allways located at the same place in Washington DC. Where ever I click in the world on my map-document, I allways get a Google map from the same place in Washington DC. 
+Kind regards, 
+ 
+Irene Reijnen
+» Reply to this comment...
+» See all 1 replie(s)

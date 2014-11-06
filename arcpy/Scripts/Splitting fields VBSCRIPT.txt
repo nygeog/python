@@ -1,0 +1,1 @@
+Split([sourcefieldhere],",")(0) #Comma being the splitting varaible (0) being the text before the first comma, (1) would be between the or before the first and second
