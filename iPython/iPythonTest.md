@@ -3,14 +3,20 @@
 
 ---
 
+Below I'm importing **Pandas** as **pd**, then reading a project-file csv.
 
+Next, I'm setting the display options to max columns of 5200 (5200 is arbitrary
+number) as when you try to display a large dataframe sometimes it won't display
+b/c it exceeds the defaut iPython Notebook settings.
+
+Last, I used **df.head(15)** to show the first 15 records in the dataframe.
 
 
 
 
     import pandas as pd
     
-    df = pd.read_csv('/Users/danielmsheehan/Dropbox/GIS/Exchange/naas/20150122/grid_sites.csv')
+    df = pd.read_csv('***/grid_sites.csv')
     
     pd.options.display.max_columns = 5200
     df.head(15)
@@ -25,10 +31,12 @@
     <tr style="text-align: right;">
       <th></th>
       <th>gid</th>
+      <th>x</th>
+      <th>y</th>
       <th>g_point_elev10ft</th>
-      <th>p_pointwaternearangle</th>
-      <th>p_pointwaternearfeet</th>
-      <th>p_pointwaternearmeters</th>
+      <th>g_pointwaternearangle</th>
+      <th>g_pointwaternearfeet</th>
+      <th>g_pointwaternearmeters</th>
       <th>gr0050morigsqmtrs</th>
       <th>gr0050mlandsqmtrs</th>
       <th>gr0100morigsqmtrs</th>
@@ -164,6 +172,8 @@
     <tr>
       <th>0 </th>
       <td> 100001</td>
+      <td> 913307.305588</td>
+      <td> 122566.653211</td>
       <td>-9999.000000</td>
       <td>   0.000000</td>
       <td>   0.000000</td>
@@ -301,6 +311,8 @@
     <tr>
       <th>1 </th>
       <td> 100002</td>
+      <td> 913307.305588</td>
+      <td> 122894.737200</td>
       <td>    4.091254</td>
       <td>   0.000000</td>
       <td>   0.000000</td>
@@ -438,6 +450,8 @@
     <tr>
       <th>2 </th>
       <td> 100003</td>
+      <td> 913307.305588</td>
+      <td> 123222.821190</td>
       <td>    8.551375</td>
       <td> 179.351037</td>
       <td>  43.298329</td>
@@ -575,6 +589,8 @@
     <tr>
       <th>3 </th>
       <td> 100004</td>
+      <td> 913307.305588</td>
+      <td> 123550.905179</td>
       <td>   10.467310</td>
       <td>-177.696901</td>
       <td>  32.267293</td>
@@ -712,6 +728,8 @@
     <tr>
       <th>4 </th>
       <td> 100005</td>
+      <td> 913307.305588</td>
+      <td> 123878.989169</td>
       <td>   11.947045</td>
       <td> 178.242903</td>
       <td>  15.812024</td>
@@ -849,6 +867,8 @@
     <tr>
       <th>5 </th>
       <td> 100006</td>
+      <td> 913307.305588</td>
+      <td> 124207.073158</td>
       <td>   22.624182</td>
       <td>-161.923546</td>
       <td>  79.396129</td>
@@ -986,6 +1006,8 @@
     <tr>
       <th>6 </th>
       <td> 100007</td>
+      <td> 913307.305588</td>
+      <td> 124535.157148</td>
       <td>    8.151647</td>
       <td> 129.986839</td>
       <td>  14.512148</td>
@@ -1123,6 +1145,8 @@
     <tr>
       <th>7 </th>
       <td> 100008</td>
+      <td> 913307.305588</td>
+      <td> 124863.241137</td>
       <td>-9999.000000</td>
       <td>   0.000000</td>
       <td>   0.000000</td>
@@ -1260,6 +1284,8 @@
     <tr>
       <th>8 </th>
       <td> 100009</td>
+      <td> 913635.389577</td>
+      <td> 121910.485232</td>
       <td>-9999.000000</td>
       <td>   0.000000</td>
       <td>   0.000000</td>
@@ -1397,6 +1423,8 @@
     <tr>
       <th>9 </th>
       <td> 100010</td>
+      <td> 913635.389577</td>
+      <td> 122238.569221</td>
       <td>    6.932351</td>
       <td>-147.873600</td>
       <td>   0.861270</td>
@@ -1534,6 +1562,8 @@
     <tr>
       <th>10</th>
       <td> 100011</td>
+      <td> 913635.389577</td>
+      <td> 122566.653211</td>
       <td>   25.593199</td>
       <td>-158.656462</td>
       <td> 143.401367</td>
@@ -1671,6 +1701,8 @@
     <tr>
       <th>11</th>
       <td> 100012</td>
+      <td> 913635.389577</td>
+      <td> 122894.737200</td>
       <td>   41.408394</td>
       <td>-160.210859</td>
       <td> 287.609447</td>
@@ -1808,6 +1840,8 @@
     <tr>
       <th>12</th>
       <td> 100013</td>
+      <td> 913635.389577</td>
+      <td> 123222.821190</td>
       <td>   53.034622</td>
       <td> 179.351037</td>
       <td> 371.361273</td>
@@ -1945,6 +1979,8 @@
     <tr>
       <th>13</th>
       <td> 100014</td>
+      <td> 913635.389577</td>
+      <td> 123550.905179</td>
       <td>   65.846687</td>
       <td>-177.696901</td>
       <td> 360.086264</td>
@@ -2082,6 +2118,8 @@
     <tr>
       <th>14</th>
       <td> 100015</td>
+      <td> 913635.389577</td>
+      <td> 123878.989169</td>
       <td>   71.497841</td>
       <td> 178.242903</td>
       <td> 343.741749</td>
@@ -2222,5 +2260,9 @@
 
 
 
+#Using terminal convert the iPython Notebook to a Markdown file
 
-    ipython nbconvert notebook.ipynb --to markdown
+```ipython nbconvert iPythonTest.ipynb --to markdown```
+
+
+    
