@@ -3,3 +3,6 @@ for file
 
 zip -er [destination].zip [source]
 for folder
+
+
+http://osxdaily.com/2012/01/07/set-zip-password-mac-os-x/
