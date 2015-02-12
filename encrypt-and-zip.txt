@@ -1,0 +1,5 @@
+zip -e  [destination].zip [source].csv 
+for file
+
+zip -er [destination].zip [source]
+for folder
