@@ -1,0 +1,1 @@
+ df['county'] = df['county'].apply(lambda x: '{0:0>3}'.format(x)) #add leaving zeros
