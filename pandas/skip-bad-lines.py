@@ -1,1 +1,0 @@
-df = pd.read_csv(inCSV, sep=';', error_bad_lines=False)

@@ -1,2 +1,0 @@
- print pandas.__path__
-['/Library/Python/2.7/site-packages/pandas-0.12.0-py2.7-macosx-10.9-intel.egg/pandas']

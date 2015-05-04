@@ -1,1 +1,0 @@
-df['datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
