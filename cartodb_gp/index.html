@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Latitude:  <input type="text" id="myLat" value="40.7127">
+Longitude: <input type="text" id="myLng" value="-74.0059">
+
+<p>Click the button to display the value of the value attribute of the text field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demoLng"></p>
+<p id="demoLat"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myLng").value;
+    document.getElementById("demoLng").innerHTML = x;
+    var y = document.getElementById("myLat").value;
+    document.getElementById("demoLat").innerHTML = y;
+}
+</script>
+
+</body>
+</html>
