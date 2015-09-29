@@ -18,11 +18,14 @@ def NearJoin(inFeature,nearFeature,nearDistance,outFileLocation,outFeature):
     ### ouF = "TEST"
     ###
     ### NearJoin(inF,nrF,nrD,ouL,ouF)
+    print 'copy inFeature to temporary dataset, why, b/c the Near_analysis function appends dist,direction info to main dataset w/o creating an output dataset, problematic, if you want to run near for many feature classes'
+    arcpy.FeatureClassToFeatureClass_conversion(inFeature,outFileLocation,outFeature+'_temp')
+
     print 'find nearest feature to inFeature'
-    arcpy.Near_analysis(inFeature,nearFeature,nearDistance,"LOCATION","ANGLE")
+    arcpy.Near_analysis(outFileLocation+'/'+outFeature+'_temp',nearFeature,nearDistance,"LOCATION","ANGLE")
 
     print 'make feature layer for both inFeature and nearFeature'
-    arcpy.MakeFeatureLayer_management(inFeature,  "inFeature_Layer")
+    arcpy.MakeFeatureLayer_management(outFileLocation+'/'+outFeature+'_temp',  "inFeature_Layer")
     arcpy.MakeFeatureLayer_management(nearFeature,"nearFeature_Layer")
 
     print 'join nearFeature attributes to inFeature'
@@ -32,4 +35,7 @@ def NearJoin(inFeature,nearFeature,nearDistance,outFileLocation,outFeature):
         arcpy.AddJoin_management("inFeature_Layer","NEAR_FID","nearFeature_Layer","FID","KEEP_ALL")
 
     print 'feature class to feature class'
-    arcpy.FeatureClassToFeatureClass_conversion("inFeature_Layer",outFileLocation,outFeature)
+    arcpy.FeatureClassToFeatureClass_conversion(outFileLocation+'/'+outFeature+'_temp',outFileLocation,outFeature)
+
+    print 'delete intermediate temp input data'
+    arcpy.Delete_management(outFileLocation+'/'+outFeature+'_temp')
