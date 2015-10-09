@@ -1,11 +1,3 @@
-#import arcpy
-
-def addCalc(inFeature,inField,inFieldType,inExpression):
-    ### Example:
-    ### AddCalc(inFeature,'addcalcfield',   "DOUBLE", "!Shape!.positionAlongLine(1.0,True).firstPoint.Y")
-    arcpy.AddField_management(      inFeature, inField, inFieldType,"#","#","#","#","NULLABLE","NON_REQUIRED","#")
-    arcpy.CalculateField_management(inFeature, inField, inExpression,"PYTHON_9.3","#")
-
 def nearJoin(inFeature,nearFeature,nearDistance,outFileLocation,outFeature):
     ### Normal Near Function doesn't carry over all the attributes of inFeature or nearFeature.
     ### To Do: 
