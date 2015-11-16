@@ -36,7 +36,7 @@ def nearJoin(inFeature,nearFeature,nearDistance,outFileLocation,outFeature):
         arcpy.AddJoin_management("inFeature_Layer","NEAR_FID","nearFeature_Layer","FID","KEEP_ALL")
 
     print 'feature class to feature class'
-    arcpy.FeatureClassToFeatureClass_conversion(outFileLocation+'/'+outFeature_temp,outFileLocation,outFeature)
-
+    arcpy.FeatureClassToFeatureClass_conversion("inFeature_Layer",outFileLocation,outFeature)
+    
     print 'delete intermediate temp input data'
     arcpy.Delete_management(outFileLocation+'/'+outFeature_temp)
