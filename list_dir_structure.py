@@ -9,7 +9,8 @@ def list_files(startpath):
         for f in files:
             print('{}{}'.format(subindent, f))
 
-theDir = '/Users/danielmsheehan/Dropbox/Apps'
+#theDir = '/Users/danielmsheehan/Dropbox/Apps'
+theDir = '/Volumes/Hotel/gis/data'
 
 list_files(theDir)
 
